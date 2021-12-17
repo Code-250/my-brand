@@ -10,6 +10,8 @@
 *{
   margin:0;
   padding:0;
+  list-style: none;
+  text-decoration: none;
 }
 .landing{
   background:var(--headerback);
@@ -118,13 +120,35 @@
 
 .nav-container{
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: var(--navback);
   position:relative;
+  color:var(--textwhite)
+}
+
+ul{
+  display:flex;
+  justify-content: space-between;
+  text-align:center;
+  width:40vw;
+  height:8vh;
+  align-items: center;
+  padding-left: 90px;
+  
+}
+li{
+  color:white;
+}
+button{
+  display:none;
 }
 .bottom-line{
   background-color: var(--navborder);
-  height:2vh;
+  height:1vh;
+  width:100%;
   position:absolute;
   top:100%;
+}
+#home{
+  color:var(--textColor)
 }
