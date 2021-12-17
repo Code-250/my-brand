@@ -12,6 +12,7 @@
   padding:0;
   list-style: none;
   text-decoration: none;
+  font-family: "Raleway" sans-serif;
 }
 .landing{
   background:var(--headerback);
