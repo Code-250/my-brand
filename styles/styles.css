@@ -167,8 +167,8 @@ button{
 /* -----------About page css--------------------------- */
 
 .about-container{
-  height:120vh;
   text-align:center;
+  padding-bottom:150px;
   padding-top:50px;
 }
 .title-container{
@@ -442,6 +442,7 @@ button{
   .fa-bars{
     display:block;
   }
+  
   .about-values{
     width:80vw;
     display: flex;
