@@ -196,7 +196,7 @@
   padding:5px 60px 20px 10px;
   margin:auto;
   position: relative;
-  min-height:35vh;
+  min-height:40vh;
   
 }
 #comment{
@@ -333,7 +333,7 @@
     margin:0px 20px 0px 20px;
   }
   .comment-btn{
-    left:225px;
+    left:200px;
     width:25vw;
   }
 }
