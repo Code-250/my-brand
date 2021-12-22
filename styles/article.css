@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@200;300;400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,700&display=swap');
+
+:root{
+  --headerback:#252934;
+  --navback:#1B242F;
+  --navborder:#04C2C9;
+  --textColor:#E31B6D;
+  --textwhite:#ffff;
+  --textSecondColor:#5A5A5A;
+  --skillBackground:#E5E2E2;
+  --skillanim:#04A4AA;
+  --titleText:#444649;
+  --projectback:#f5f5f5;
+}
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Raleway" sans-serif;
+}
+.fix-nav{
+  position:fixed;
+  top:0;
+  z-index:1;
+  width:100%;
+}
+.nav-container{
+  display: flex;
+  background-color: var(--navback);
+  position:relative;
+}
+.nav-content{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  align-items:center ;
+  height:8vh;
+  padding:0px 60px 0px 60px;
+}
+.nav-content ul .home-link li{
+  font-family: Raleway;
+  font-weight:500;
+  color:var(--textwhite);
+
+}
+.profile{
+  width:40px;
+  height: 40px;
+  clip-path: polygon(0 28%, 48% 0, 100% 25%, 100% 71%, 50% 100%, 0 73%);
+}
+.profile img{
+  width:40px;
+  height:40px;
+}
+.content-link{
+  display: flex;
+  justify-content: space-between;
+  width:15vw;
+  align-items: center;
+}
+.profile-full{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width:7vw;
+}
+.name-owner{
+  font-family: Raleway;
+  font-weight: 600;
+  color: var(--textwhite);
+}
+.login{
+
+  border:3px solid var(--skillanim);
+  padding:7px;
+  width:4vw;
+  text-align: center;
+}
+.login-text{
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 15px;
+  color:var(--textwhite);
+}
+.login:hover{
+  border:3px solid var(--skillanim);
+  background-color: var(--skillanim);
+  transition:0.4s ease-in-out;
+  cursor:pointer;
+}
+.nav-underline{
+  background-color: var(--navborder);
+  height:.6vh;
+  width:100%;
+  position:absolute;
+  top:100%;
+}
+
+/* article content */
+
+.container{
+  margin:auto;
+  background-color: var(--projectback);
+}
+.content{
+  width:70%;
+  margin:auto;
+  border:1px solid rgb(196, 192, 192);
+  background-color: var(--textwhite);
+}
+.blog-image{
+  width:100%;
+
+}
+.blog-image img{
+  width:100%;
+  height:50vh;
+}
+.blogger-profile-date{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:20px;
+  width:10vw;
+}
+.blogger-image{
+   width:50px;
+  height: 50px;
+  clip-path: polygon(0 28%, 48% 0, 100% 25%, 100% 71%, 50% 100%, 0 73%);
+}
+.blogger-image img{
+  width:50px;
+  height:50px;
+}
+.blogger-name{
+  font-family: Raleway;
+  font-weight: 700;
+  font-size:13px;
+  padding-bottom:3px;
+}
+.date-posted{
+  font-family: Raleway;
+  font-weight:500;
+  font-size: 11px;
+}
+.blog-title-container{
+  padding:0px 20px 20px 20px;
+  font-size:40px;
+}
+.blog-title-container .title-blog{
+  font-family: Raleway;
+  font-weight:700;
+  color: rgba(0, 0, 0, 0.8);
+}
+.blog-full-content{
+  padding:40px;
+  line-height:20pt;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 16px;
+  color:var(--textSecondColor)
+}
+.guest-comment{
+  font-family: Raleway;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+}
+.blog-comment{
+  width:100%;
+}
+.blog-final-line{
+  width:100%;
+  border:1px solid var(--textSecondColor);
+  font-size:2px;
+  height:.3px;
+  clip-path: polygon(99% 53%, 98% 54%, 100% 54%, 0 55%, 0 51%, 0 54%);
+}
+.comments-title{
+  display:flex;
+  justify-content: space-between;
+  padding:20px 60px 20px 60px;
+}
+.subscribe{
+  border:2px solid var(--textSecondColor);
+  padding:8px;
+  margin-right:50px;
+  border-radius:10px;
+  text-align: center;
+  font-family: Raleway;
+  font-weight:500;
+  width:7vw;
+}
+.comments-input{
+  width:80%;
+  padding:5px 60px 20px 10px;
+  margin:auto;
+  position: relative;
+  min-height:35vh;
+  
+}
+#comment{
+  width:100%;
+  border:1px solid var(--textSecondColor);
+  border-radius: 10px;
+}
+.comment-btn{
+  position:absolute;
+  top:180px;
+  left:645px;
+  right:0;
+  padding:10px;
+  text-align:center;
+  width:7vw;
+  font-family: Raleway;
+  font-weight:600;
+  border-radius:10px ;
+  border: 3px solid var(--textColor);
+
+}
+.comment-btn:hover{
+  border:3px solid var(--textColor);
+  background-color: var(--textColor);
+  color: var(--textwhite);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.comments-container{
+  padding:20px 60px 20px 60px;
+}
+
+.comment-guest{
+  display: flex;
+  align-items: center;
+  width:100%;
+}
+.comment-holder{
+  border:1px solid rgb(196, 192, 192);
+  padding-left:20px;
+  min-height:120px;
+  border-radius: 5px;
+  margin:10px 50px 10px 30px;
+  width:46vw;
+}
+.guest-comment{
+  display: flex;
+  align-items: center;
+  padding-top:10px;
+}
+.guest-name{
+  font-family: Raleway;
+  font-weight:600;
+  font-size:20px;
+  margin-right:2px;
+}
+.guest-dot{
+  font-size:20px;
+}
+.guest-comment .date{
+  font-size:15px;
+  margin-left:2px;
+  font-weight:500;
+}
+.comment-description{
+  padding-top:15px;
+  font-family: Raleway;
+  font-weight:400;
+}
+.guest-profile{
+  width:50px;
+  height: 50px;
+  clip-path: polygon(0 28%, 48% 0, 100% 25%, 100% 71%, 50% 100%, 0 73%);
+}
+.guest-profile img{
+  width:50px;
+  height:50px;
+}
+
+/* ---- mobine view */
+
+@media screen and (max-width:768px){
+  .container{
+    min-height:410vh;
+  }
+  .content{
+    min-height:405vh;
+  }
+  .nav-content{
+    padding:0px 20px 0px 20px;
+  }
+  .content-link{
+    width:45vw;
+  }
+  .login{
+    width:10vw;
+  }
+  .profile-full{
+    width:25vw;
+  }
+  .content{
+    width:95%;
+  }
+  .blogger-profile-date{
+    width:37vw;
+  }
+  .blog-full-content{
+    padding:20px;
+    font-size:15px;
+  }
+  .comments-title{
+    padding:10px 10px 25px 30px;
+    width:90%;
+  }
+  .subscribe{
+    width:25vw;
+  }
+  .comments-input{
+    width:90%;
+    margin-left:10px;
+    padding:0;
+  }
+  .comments-container{
+    width:95%;
+    padding:0px;
+  }
+  .comment-guest{
+  width:95%;
+  padding:10px;
+  margin-left:15px;
+  }
+  .comment-holder{
+    width:90%;
+    margin:0px 20px 0px 20px;
+  }
+  .comment-btn{
+    left:225px;
+    width:25vw;
+  }
+}
