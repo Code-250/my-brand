@@ -274,11 +274,12 @@
     font-size: 15px;
   }
   .contact-btns{
+    top:420px;
     left:230px;
     width:15vw;
   }
   .footer-container{
-    height:50vh;
+    height:55vh;
   }
   .social-media{
     width:100%;
