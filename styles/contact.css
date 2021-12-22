@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@200;300;400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,700&display=swap');
+
+:root{
+  --headerback:#252934;
+  --navback:#1B242F;
+  --navborder:#04C2C9;
+  --textColor:#E31B6D;
+  --textwhite:#ffff;
+  --textSecondColor:#5A5A5A;
+  --skillBackground:#E5E2E2;
+  --skillanim:#04A4AA;
+  --titleText:#444649;
+  --projectback:#f5f5f5;
+  --contactpage:#252934;
+  --contactInputs:#1E242C;
+  --textInput:
+}
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Raleway" sans-serif;
+}
+
+.contact-container{
+  /* width:100%; */
+  min-height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 150px;
+  clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
+  background-color: var(--contactpage);;
+}
+.contact-content{
+  width:40%;
+  text-align:center;
+}
+.contact-title{
+  position:relative;
+}
+.title-contact{
+  color:var(--textwhite);
+  font-family: Raleway;
+  font-weight: 600;
+  font-size:30px;
+  text-transform:uppercase;
+}
+.contact-line{
+    width:80px;
+  position:absolute;
+  margin:auto;
+  top:50px;
+  left:0;
+  right:0;
+  height:4px;
+  background-color:var(--textwhite);
+}
+.contact-text{
+  padding-top:40px;
+}
+.contact-description{
+  color:var(--skillanim);
+  font-family: Raleway;
+  font-weight:700;
+  font-size:20px;
+}
+.contact-inputs{
+  display:flex;
+  flex-direction: column;
+  padding:40px;
+}
+.guest-name{
+  padding:12px;
+  margin:12px;
+  background-color: var(--contactInputs);
+  font-family: Raleway;
+  font-weight:600;
+  color:var(--textSecondColor);
+  border:none;
+}
+.guest-email{
+  padding:12px;
+  background-color: var(--contactInputs);
+  border:none;
+  font-family: Raleway;
+  font-weight:600;
+  color:var(--textSecondColor);
+  margin:12px;
+}
+#message{
+  padding:12px;
+  background-color: var(--contactInputs);
+  border:none;
+  font-family: Raleway;
+  font-weight:600;
+  color:var(--textSecondColor);
+  margin:12px;
+}
+.contact-inputs{
+  position: relative;
+}
+.contact-btns{
+  border:4px solid var(--textwhite);
+  width:8vw;
+  padding:12px;
+  position:absolute;
+  top:430px;
+  left:350px;
+}
+.submit-data{
+  color:var(--textwhite);
+  font-family: Raleway;
+  font-weight: 600;
+  font-size:15px;
+  text-transform: uppercase;
+}
+.contact-btns:hover{
+  background-color: var(--navborder);
+  cursor:pointer;
+  border:4px solid var(--navborder);
+  padding:12px;
+  transition: 0.3s ease-in-out;
+}
+.footer-container{
+  background-color:#1B242F;
+  height:20vw;
+  text-align: center;
+  position:relative;
+}
+.back-to-top{
+  width: 60px;
+  height:60px;
+  background-color: var(--textColor);
+  position: absolute;
+  top:-10%;
+  left:50%;
+  right:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-angle-double-up{
+  color:var(--textwhite);
+  font-size: 40px;
+
+}
+.back-to-top:hover{
+  cursor:pointer;
+}
+.footer-content{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  
+}
+.footer-note{
+  color:var(--titleText);
+  font-family: Raleway;
+  font-weight:400;
+  text-transform: uppercase;
+  font-size:20px;
+  opacity: 0.6;
+  padding:5px;
+}
+.fa-copyright{
+  color:var(--textColor);
+  font-size:20px;
+  padding:5px;
+  opacity: 0.6;
+}
+.footer-year{
+  color:var(--textColor);
+  font-size:20px;
+  padding:5px;
+  opacity:0.6;
+}
+.social-media{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:25%;
+  margin: auto;
+  padding-top:100px;
+}
+.linkedin{
+  background-color: #262F38;
+  width:60px;
+  height:60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:20px;
+}
+.linkedin:hover{
+  transition: 0.4s ease-in-out;
+  background-color: var(--skillanim);
+  cursor:pointer;
+}
+.fa-linkedin{
+  font-size: 35px;
+  color:var(--textwhite);
+}
+.facebook{
+  background-color: #262F38;
+  width:60px;
+  height:60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:20px
+}
+.facebook:hover{
+  transition: 0.4s ease-in-out;
+  cursor:pointer;
+  background-color: var(--skillanim);
+}
+.fa-facebook{
+  font-size: 35px;
+  color:var(--textwhite);
+}
+.instagram{
+  background-color: #262F38;
+  width:60px;
+  height:60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:20px
+}
+.instagram:hover{
+  transition: 0.4s ease-in-out;
+  background-color: var(--skillanim);
+  cursor:pointer;
+}
+.fa-instagram{
+  font-size: 35px;
+  color:var(--textwhite);
+}
+.github{
+  background-color: #262F38;
+  width:60px;
+  height:60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:20px
+}
+.github:hover{
+  transition: 0.4s ease-in-out;
+  cursor:pointer;
+  background-color: var(--skillanim);
+}
+
+.fa-github{
+  font-size: 35px;
+  color:var(--textwhite);
+}
+
+/* -------- Mobile View ------------ */
+
+@media screen and (max-width:768px) {
+  .contact-container{
+    padding-top:80px;
+    min-height:100vh;
+    clip-path: polygon(50% 6%, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+  .contact-content{
+    width:100%;
+  }
+  .contact-description{
+    font-size: 15px;
+  }
+  .contact-btns{
+    top:420px;
+    left:230px;
+    width:15vw;
+  }
+  .footer-container{
+    height:55vh;
+  }
+  .social-media{
+    width:100%;
+  }
+  .github,.facebook,.linkedin,.instagram{
+    margin:10px;
+  }
+}
