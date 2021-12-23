@@ -64,3 +64,17 @@
   border-radius:2px;
   color:#5A5A5A
 }
+.login-btn{
+  width:10vw;
+  background-color: var(#E31B6D);
+  height:50px;
+  color:white;
+  text-align:center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border:4px solid white;
+  margin:30px;
+
+  margin-left:230px;
+}
