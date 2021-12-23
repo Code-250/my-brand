@@ -97,4 +97,5 @@
 .login-btn:hover{
   background-color: var(--textColor);
   transition:0.4s ease-in-out;
+  cursor:pointer;
 }
