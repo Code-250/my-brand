@@ -25,7 +25,8 @@
 
 .contact-container{
   /* width:100%; */
-  min-height:100vh;
+  min-height: 120vh;
+  height:110vh;
   display:flex;
   justify-content: center;
   align-items: start;
@@ -264,19 +265,24 @@
 @media screen and (max-width:768px) {
   .contact-container{
     padding-top:80px;
-    min-height:100vh;
+    min-height:120vh;
     clip-path: polygon(50% 6%, 100% 0, 100% 100%, 0 100%, 0 0);
   }
+  
   .contact-content{
     width:100%;
+  }
+  .contact-inputs{
+    padding:10px;
   }
   .contact-description{
     font-size: 15px;
   }
+  
   .contact-btns{
-    top:420px;
+    top:370px;
     left:230px;
-    width:15vw;
+    width:25vw;
   }
   .footer-container{
     height:55vh;
@@ -286,5 +292,6 @@
   }
   .github,.facebook,.linkedin,.instagram{
     margin:10px;
+    font-size: 15px;
   }
 }

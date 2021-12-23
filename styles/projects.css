@@ -29,6 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position:relative;
 }
 .project-title{
   font-family: Raleway;
@@ -44,7 +45,7 @@
   width:55px;
   position:absolute;
   margin:auto;
-  top:1830px;
+  top:90px;
   left:0;
   right:0;
   height:3px;
@@ -118,7 +119,7 @@
 }
 .card-project:hover .project-btn{
   border:3px solid var(--textColor);
-  width:40%;
+  width:50%;
   margin:auto;
   padding:10px;
   font-family: Raleway;
@@ -148,7 +149,7 @@
     height:175vh;
   }
  .project-title-underline{
-   top:2310px;
+   top:90px;
  }
  .nav-project-container{
    margin:10px 40px 10px 40px;
