@@ -16,6 +16,7 @@
   padding:0;
   list-style: none;
   text-decoration: none;
+  box-sizing:border-box;
   font-family: "Raleway" sans-serif;
 }
 .landing{
@@ -124,9 +125,14 @@
 }
 
 /* navbar */
-
+.fixed-navbar{
+  position:sticky;
+  top:0;
+  z-index:1;
+}
 .nav-container{
   display:flex;
+
   justify-content: space-between;
   background-color: var(--navback);
   position:relative;
@@ -147,9 +153,16 @@ ul{
 li{
   color:white;
   font-family: Raleway;
-  font-weight:400;
+  font-weight:500;
+}
+.nav-container ul a li.active{
+  color: var(--textColor);
 }
 button{
+  display:none;
+}
+
+.nav-hidden{
   display:none;
 }
 .bottom-line{
@@ -159,9 +172,7 @@ button{
   position:absolute;
   top:100%;
 }
-#home{
-  color:var(--textColor)
-}
+
 
 
 /* -----------About page css--------------------------- */
@@ -423,21 +434,61 @@ button{
 /* ------------Mobile css----------- */
 
 @media screen and (max-width:768px){
+  body{
+    max-width:100%;
+  }
 
   #home-anim{
     height:100vh;
-    width:100vw;
+    width:100%;
   }
   #title{
-    font-size:20px;
+    font-size:16px;
     line-height: 20pt;
   }
-  .view-work{
-    width:45vw;
-    top:53%;
+  .profile-description{
+    margin:auto;
   }
-  li{
+  .view-work{
+    width:50vw;
+    height:8vh;
+  }
+  .fixed-navbar{
+    position:sticky;
+    top:0; 
+    width:100%;
+  }
+ .nav-container{
+   margin-bottom:0;
+   position:relative;
+  
+ }
+  .nav-container ul a li{
     display:none;
+  }
+  .nav-links-bars{
+    width:100%;
+    background-color: var(--navback);
+    height:40vh;
+    margin-top:4px;
+    z-index:1;
+    position:absolute;
+
+  }
+  .nav-links-bars ul{
+    width:100%;
+  }
+  .nav-links-bars ul{
+    display:flex;
+    flex-direction: column;
+    padding-left:0;
+    /* padding-top:10px; */
+  }
+  .nav-links-bars ul a li{
+    display:block;
+    color:var(--textwhite);
+    padding:10px;
+
   }
   .fa-bars{
     display:block;

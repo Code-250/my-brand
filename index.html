@@ -15,7 +15,7 @@
     <title>Landing Page</title>
   </head>
   <body>
-    <div class="landing">
+    <section class="landing" id="home-link">
       <svg
         version="1.1"
         id="home-anim"
@@ -108,21 +108,33 @@
         <i class="fa fa-arrow-right"></i>
         <i class="fa fa-arrow-down"></i>
       </div>
+    </section>
+    <div class="fixed-navbar">
+      <div class="nav-container">
+        <ul>
+          <a href="#"><li class="home-link active">HOME</li></a>
+          <a href="#"><li class="about-link">ABOUT ME</li></a>
+          <a href="#"><li class="portfolio-link">PORTFOLIO</li></a>
+          <a href="#"><li class="blog-link">BLOG</li></a>
+          <a href="#"><li class="contact-link">CONTACT</li></a>
+        </ul>
+        <i class="fa fa-bars"></i> 
+        <div class="bottom-line"></div>
+      </div>
+        <div class="nav-container nav-links-bars nav-hidden">
+          <ul>
+            <a href="#"><li class="home-link active">HOME</li></a>
+            <a href="#"><li class="about-link">ABOUT ME</li></a>
+            <a href="#"><li class="portfolio-link">PORTFOLIO</li></a>
+            <a href="#"><li class="blog-link">BLOG</li></a>
+            <a href="#"><li class="contact-link">CONTACT</li></a>
+          </ul>
+        </div>
     </div>
-    <div class="nav-container">
-      <ul>
-        <a href="#"><li id="home">HOME</li></a>
-        <a href="#"><li>ABOUT ME</li></a>
-        <a href="#"><li>PORTFOLIO</li></a>
-        <a href="#"><li>BLOG</li></a>
-        <a href="#"><li>CONTACT</li></a>
-      </ul>
-      <i class="fa fa-bars"></i>
-      <div class="bottom-line"></div>
-    </div>
+    
     <!-- About Page -->
 
-    <div class="about-container">
+    <section class="about-container" id="about-link">
       <div class="title-container animated slide-in-left">
         <h2 class="about-title">ABOUT</h2>
         <div
@@ -345,12 +357,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
 
     <!-- project page  -->
 
-    <div class="container">
+    <section class="container" id="portfolio-link">
       <div class="project-container">
         <h2 class="project-title">PROJECTS</h2>
         <div class="project-title-underline"></div>
@@ -403,11 +415,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Blog Page -->
 
-    <div class="blog-container">
+    <section class="blog-container"id="blog-link">
       <div class="blog-content">
         <div class="blog-title">
           <h3 class="title">BLOG</h3>
@@ -415,7 +427,8 @@
         </div>
         <div class="blog-second-content">
           <div class="blog-list">
-            <div class="blog-card">
+            <a href="./article.html">
+               <div class="blog-card">
               <div class="blog-image">
                 <img src="./assets/read.jpg" alt="importance of reading" width="400" height="350"/>
               </div>
@@ -438,7 +451,9 @@
                 </div>
               </div>
             </div>
-            <div class="blog-card">
+            </a>
+           <a href="./article.html">
+             <div class="blog-card">
               <div class="blog-image">
                <img src="./assets/docker.jpg" alt="docker compose picture" width="400" height="350"/>
               </div>
@@ -461,7 +476,9 @@
                 </div>
               </div>
             </div>
-            <div class="blog-card">
+           </a>
+            <a href="./article.html">
+              <div class="blog-card">
               <div class="blog-image">
                 <img src="./assets/extension.jpg" alt="blog picture" width="400" height="350"/>
               </div>
@@ -484,7 +501,9 @@
                 </div>
               </div>
             </div>
-            <div class="blog-card">
+            </a>
+            <a href="./article.html">
+              <div class="blog-card">
               <div class="blog-image"></div>
               <div class="blog-title-date">
                 <h3 class="title-blog">The Importance of reading</h3>
@@ -505,14 +524,16 @@
                 </div>
               </div>
             </div>
+            </a>
+            
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- contact page -->
 
-    <div class="contact-container">
+    <section class="contact-container" id="contact-link">
       <div class="contact-content">
         <div class="contact-title">
           <h3 class="title-contact">Contact</h3>
@@ -533,9 +554,9 @@
       
       
       
-    </div>
+    </section>
     <footer class="footer-container">
-      <div class="back-to-top">
+      <div class="back-to-top" id="scroll-top">
       <i class="fa fa-angle-double-up" aria-hidden="true"></i>
       </div>
       <div class="social-media">
@@ -563,8 +584,10 @@
       <div class="footer-content">
         <p class="footer-note">Richard Munyemana</p>
         <i class="fa fa-copyright" aria-hidden="true"></i>
-        <p class="footer-year">2021</p>
+        <p class="footer-year">2021s</p>
       </div>
     </footer>
+
+    <script src="./js/scrollable.js"></script>
   </body>
 </html>
