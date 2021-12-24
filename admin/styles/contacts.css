@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@200;300;400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,700&display=swap');
+
+:root{
+  --headerback:#252934;
+  --navback:#1B242F;
+  --navborder:#04C2C9;
+  --textColor:#E31B6D;
+  --textwhite:#ffff;
+  --textSecondColor:#5A5A5A;
+  --skillBackground:#E5E2E2;
+  --skillanim:#04A4AA;
+  --titleText:#444649;
+  --projectback:#f5f5f5;
+  --bordersides:rgba(134, 136, 139,0.5);
+
+}
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Raleway" sans-serif;
+}
+
+.articles-holder{
+  display:none;
+}
+.contact-querries{
+  background-color: var(--navback);
+  color:var(--textwhite);
+  display:flex;
+  /* flex-direction: column; */
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  width:75%;
+  padding:10px;
+}
+.section-content{
+  display:grid;
+  grid-gap:40px;
+}
+.article-holder{
+  padding-bottom: 5px;
+}
+.message-card{
+  border:1px solid var(--bordersides);
+  height:35vh;
+}
+.article-title-date{
+  padding-left:10px;
+}
+.title-articles{
+  padding-top:20px;
+}
+.article-line{
+  top: 100px;
+  left:12px;
+}
+.fa-reply{
+  color:var(--textColor);
+  font-size: 12px;
+}
