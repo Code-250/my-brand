@@ -467,12 +467,44 @@ body{
   font-weight:500;
 
 }
+.submit-update-btn{
+  border:5px solid var(--skillanim);
+  width:8vw;
+  height:5vh;
+  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-family:Raleway;
+  font-weight: 500;
+}
+.cancel-update-btn{
+  border: 5px solid var(--textColor);
+  width:7vw;
+  height:5vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Raleway;
+  font-weight:500;
+
+}
 .submit-btn:hover{
   background: var(--skillanim);
   cursor:pointer;
   color: var(--textwhite);
 }
 .cancel-btn:hover{
+  background-color:var(--textColor);
+  cursor: pointer;
+  color:var(--textwhite)
+}
+.submit-update-btn:hover{
+  background: var(--skillanim);
+  cursor:pointer;
+  color: var(--textwhite);
+}
+.cancel-update-btn:hover{
   background-color:var(--textColor);
   cursor: pointer;
   color:var(--textwhite)
@@ -798,6 +830,27 @@ body{
   cursor: pointer;
   background-color: var(--skillBackground);
 }
+.edit-skills1
+,.delete-blog{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--skillBackground);
+}
+.edit-skills2,.delete-blog1{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--skillBackground);
+}
 .edit-skills3,.remove-skills3{
   width:30px;
   height:30px;
@@ -817,6 +870,9 @@ body{
   justify-content: center;
   cursor: pointer;
   background-color: var(--skillBackground);
+}
+.section-content a{
+  color:var(--textSecondColor)
 }
 .fa-pen,.fa-trash-alt{
   color:var(--textColor);
