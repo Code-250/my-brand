@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <link rel="stylesheet" href="./styles/admin.css"/>
+  <title>Admin</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header-container">
+      <nav class="navbar-container">
+        <div class="nav-container">
+          <div class="profile-container">
+            <div class="profile">
+              <div class="profile-image">
+                <img src="../assets/rich-bw.jpg" alt="owner-profile picture" id="image-profile">
+              </div>
+              <h4 class="owner-name">Richard</h4>
+            </div>
+          </div>
+            <div class="logout-btn">logout</div>
+          </div>
+          <!-- <i class="fa fa-bars"></i> -->
+          <div class="bottom-line"></div>
+        </div>
+      </nav>
+    </header>
+    <content class="sections-container">
+      <sidebar class="left-sidebar">
+        <div class="fixed-sidebar">
+          <div class="title-holder">
+          <h1 class="title">My-brand</h1>
+          <div class="title-underline"></div>
+        </div>
+        
+        <div class="sidebar-holder">
+          <div class="articles-container">
+            <div class="article-holder">
+              <i class="fa fa-caret-right"></i>
+              <p class="articles">Articles</p>
+            </div>
+            <div class="articles-holder">
+              <div class="list-value">
+                <p class="list">LIST</p>
+              </div>
+              <div class="create-value" id="create-blog">
+                <p class="create">Create article</p>
+              </div>
+            </div>
+          </div>
+         <a href="./contacts.html" class="link">
+           <div class="contact-querries">
+              <i class="fa fa-caret-right"></i>
+              <p class="contact-mesage">Contact Mesage</p>
+            </div>
+         </a> 
+          
+        </div>
+        </div>
+
+        
+      </sidebar>
+
+      <div class="model" id="my-model">
+        <div class="model-content">
+          <span class="close">&times;</span>
+          <div class="model-title">
+            <h2 class="create-article">Create Article</h2>
+            <div class="create-article-underline"></div>
+          </div>
+          <form class="create-article-form">
+            <div class="create-article-title">
+              <input type="text" class="title-create" placeholder="Article Title">
+            </div>
+            <div class="upload-article-image">
+              <input type="file" class="article-picture" accept="image/x-jpeg,image/x-png">
+
+            </div>
+            <div class="preview-picture">
+              Preview Image
+            </div>
+            <div class="article-content">
+              <textarea name="article" id="" cols="30" rows="10" placeholder="article description" class="detailed-article-description"></textarea>
+            </div>
+            <div class="position-content">
+              <div class="submit-cancel-btn">
+              <div class="submit-btn">
+                Publish
+              </div>
+              <div class="cancel-btn">
+                Cancel
+              </div>
+            </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+      <div class="model" id="my-edit-model">
+        <div class="model-content">
+          <span class="close">&times;</span>
+          <div class="model-title">
+            <h2 class="create-article">Update Article</h2>
+            <div class="create-article-underline"></div>
+          </div>
+          <form class="create-article-form">
+            <div class="create-article-title">
+              <input type="text" class="title-create" placeholder="Article Title">
+            </div>
+            <div class="upload-article-image">
+              <input type="file" class="article-picture" accept="image/x-jpeg,image/x-png">
+
+            </div>
+            <div class="preview-picture">
+              Preview Image
+            </div>
+            <div class="article-content">
+              <textarea name="article" id="" cols="30" rows="10" placeholder="article description" class="detailed-article-description"></textarea>
+            </div>
+            <div class="position-content">
+              <div class="submit-cancel-btn">
+              <div class="submit-update-btn">
+                Update
+              </div>
+              <div class="cancel-update-btn">
+                Cancel
+              </div>
+            </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+      <div class="model" id="my-delete-model">
+        <div class="model-content-delete">
+          <span class="close">&times;</span>
+          <div class="comfirm-delete">
+            <p class="deleted">Are you sure you want to delete this Article</p>
+          </div>
+          <div class="comfirm-cancel">
+            <div class="comfirm">
+              Delete
+            </div>
+            <div class="cancel-delete">
+              Cancel
+            </div>
+          </div>
+        </div>
+      </div>
+      <content class="section-container">
+        <div class="section-title">
+          <h1 class="title-article">Articles</h1>
+        </div>
+        <section class="section-content">
+          
+            <div class="article-card">
+              <a href="../article.html">
+              <div class="article-owner-image">
+                <img src="../assets/read.jpg" alt="importance of reading" width="400" height="350"/>
+              </div>
+              <div class="article-title-date">
+                <h3 class="title-articles">The Importance of reading</h3>
+                <p class="date-article">march, 12,2021</p>
+                <div class="article-line"></div>
+              </div>
+              <div class="article-description">
+                <p class="blog-content-description">The same way we feed our bellies, should be the same way that we should feed our brain. But how can we feed our brains? one way that issgnificant it is through reading....</p>
+              </div>
+            </a>
+               <div class="edit-delete">
+                <div class="edit-skill-article" id="edit-skill">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="delete-blog">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+          
+           
+            
+              <div class="article-card">
+                <a href="../article.html">
+              <div class="article-owner-image">
+                <img src="../assets/read.jpg" alt="importance of reading" width="400" height="350"/>
+              </div>
+              <div class="article-title-date">
+                <h3 class="title-articles">The Importance of reading</h3>
+                <p class="date-article">march, 12,2021</p>
+                <div class="article-line"></div>
+              </div>
+              <div class="article-description">
+                <p class="blog-content-description">The same way we feed our bellies, should be the same way that we should feed our brain. But how can we feed our brains? one way that issgnificant it is through reading....</p>
+              </div>
+            </a>
+              <div class="edit-delete">
+                <div class="edit-skill-article" id="edit-skill1">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="delete-blog1">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+            
+             
+            
+              <div class="article-card">
+                <a href="../article.html">
+              <div class="article-owner-image">
+                <img src="../assets/read.jpg" alt="importance of reading" width="400" height="350"/>
+              </div>
+              <div class="article-title-date">
+                <h3 class="title-articles">The Importance of reading</h3>
+                <p class="date-article">march, 12,2021</p>
+                <div class="article-line"></div>
+              </div>
+              <div class="article-description">
+                <p class="blog-content-description">The same way we feed our bellies, should be the same way that we should feed our brain. But how can we feed our brains? one way that issgnificant it is through reading....</p>
+              </div>
+            </a>
+               <div class="edit-delete">
+                <div class="edit-skill-article" id="edit-skill2">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="delete-blog2">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+            
+             
+        </section>
+      </content>
+
+      <!-- skills model -->
+
+      <div class="model" id="my-add-model">
+        <div class="model-content-skills">
+          <span class="close">&times;</span>
+          <div class="create-skill-title">
+            <p class="skills-header">Add Skill</p>
+            <div class="skills-underline"></div>
+          </div>
+          <form class="form-field">
+              <div class="language-name">
+              <input type="text" class="tech-name" placeholder="Language Title">
+            </div>
+            <div class="language-selector">
+              <select name="languages" class="selection">
+                <option value="0">Select a language</option>
+                <option value="1">Javascript</option>
+                <option value="2">Node js</option>
+                <option value="3">Vue js</option>
+                <option value="4">ReactJs</option>
+                <option value="5">Figma</option>
+              </select>
+            </div>
+            <div class="position-end">
+              <div class="save-language-cancel">
+              <div class="save-language-btn">Save</div>
+              <div class="cancel-language-btn">Cancel</div>
+            </div>
+          </form>
+          
+          </div>
+          
+        </div>
+      </div>
+      <div class="model" id="my-update-model">
+        <div class="model-content-skills">
+          <span class="close">&times;</span>
+          <div class="create-skill-title">
+            <p class="skills-header">Update Skill</p>
+            <div class="skills-underline"></div>
+          </div>
+          <form class="form-field">
+              <div class="language-name">
+              <input type="text" class="tech-name" placeholder="Language Title">
+            </div>
+            <div class="language-selector">
+              <select name="languages" class="selection">
+                <option value="0">Select a language</option>
+                <option value="1">Javascript</option>
+                <option value="2">Node js</option>
+                <option value="3">Vue js</option>
+                <option value="4">ReactJs</option>
+                <option value="5">Figma</option>
+              </select>
+            </div>
+            <div class="position-end">
+              <div class="save-language-cancel">
+              <div class="save-language-update-btn">Save</div>
+              <div class="cancel-language-update-btn">Cancel</div>
+            </div>
+          </form>
+          
+          </div>
+          
+        </div>
+      </div>
+      <div class="model" id="my-delete-skill-model">
+        <div class="model-content-delete">
+          <span class="close">&times;</span>
+          <div class="comfirm-delete">
+            <p class="deleted">Are you sure you want to remove this skill.</p>
+          </div>
+          <div class="comfirm-cancel">
+            <div class="comfirm-skill-delete">
+              Delete
+            </div>
+            <div class="cancel-skill-delete">
+              Cancel
+            </div>
+          </div>
+        </div>
+      </div>
+      <sidebar class="right-sidebar">
+        <div class="fixed-right-sidebar">
+          <div class="skill-bar">
+            <div class="skill-bar-title">
+              <h3 class="skill-title">Skills</h3>
+              <div class="skill-underline"></div>
+            </div>
+            
+            <div class="add-skill" id="add-skill">Add</div>
+          </div>
+          <div class="skills-rating">
+            <div class="skill-content">
+              <div class="skill-name">
+                <h3 class="name-skill">Javascript</h3>
+                <div class="edit-skills">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="remove-skills">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+              <div class="skill-container">
+                <div class="skill-value-js">
+                </div>
+              </div>
+            </div>
+            <div class="skill-content">
+              <div class="skill-name">
+                <h3 class="name-skill">React.Js</h3>
+                <div class="edit-skills1">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="remove-skills1">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+              <div class="skill-container">
+                <div class="skill-value-react">
+                </div>
+              </div>
+            </div>
+            <div class="skill-content">
+              <div class="skill-name">
+                <h3 class="name-skill">HTML</h3>
+                <div class="edit-skills2">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="remove-skills2">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+              <div class="skill-container">
+                <div class="skill-value-html">
+                </div>
+              </div>
+            </div>
+            <div class="skill-content">
+              <div class="skill-name">
+                <h3 class="name-skill">NodeJs</h3>
+                <div class="edit-skills3">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="remove-skills3">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+              <div class="skill-container">
+                <div class="skill-value-node">
+                </div>
+              </div>
+            </div>
+            <div class="skill-content">
+              <div class="skill-name">
+                <h3 class="name-skill">CSS</h3>
+                <div class="edit-skills4">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="remove-skills4">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+              <div class="skill-container">
+                <div class="skill-value-css">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+      </sidebar>
+    </content>
+  </div>
+
+  <!-- scripts -->
+  <script src="./js/model.js"></script>
+</body>
+</html>
