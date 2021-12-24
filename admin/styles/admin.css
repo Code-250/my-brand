@@ -309,6 +309,34 @@ body{
   background-color: var(--textColor);
   color: var(--textwhite);
 }
+.comfirm-skill-delete{
+  border:4px solid var(--skillanim);
+  height:4vh;
+  width:6vw;
+  display:flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  font-family: Raleway;
+  font-weight:500;
+  border-radius: 5px;
+  background-color: var(--skillanim);
+  color: var(--textwhite);
+}
+.cancel-skill-delete{
+  border:4px solid var(--textColor);
+  height:4vh;
+  width:6vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Raleway;
+  cursor: pointer;
+  font-weight:500;
+  border-radius: 5px;
+  background-color: var(--textColor);
+  color: var(--textwhite);
+}
 .close{
   color:#aaa;
   float:right;
@@ -448,6 +476,106 @@ body{
   background-color:var(--textColor);
   cursor: pointer;
   color:var(--textwhite)
+}
+.model-content-skills{
+   background-color: #efefef;
+  margin:10% auto;
+  padding:20px;
+  border:1px solid #888;
+  width:30%;
+  min-height:47vh;
+  z-index:2;
+
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px var(--textSecondColor);
+  border:none;
+}
+.create-skill-title{
+  font-family: Raleway;
+  font-weight:600;
+  font-size:25px;
+  position:relative;
+  padding:10px;
+}
+.skills-underline{
+  position:absolute;
+  top:40px;
+  left:0;
+  width:3vw;
+  margin-left:15px;
+  height:5px;
+  background-color: var(--titleText);
+}
+.form-field{
+  border:1px solid var(--bordersides);
+  border-radius: 10px;
+  height:34vh;
+  padding:20px;
+  margin-top:30px;
+
+}
+.position-end{
+  display:flex;
+  justify-content: center;
+  padding-right:10px;
+}
+.save-language-cancel{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  margin-top:70px;
+}
+.save-language-btn,.save-language-update-btn{
+  border:4px solid var(--skillanim);
+  padding:7px;
+  width:9vw;
+  display:flex;
+  justify-content: center;
+  background-color: var(--skillanim);
+  color: var(--textwhite);
+  font-family: Raleway;
+  font-weight:500;
+  cursor:pointer;
+  border-radius: 5px;
+  align-items: center;
+}
+.cancel-language-btn,.cancel-language-update-btn{
+  border:4px solid var(--textColor);
+  padding:7px;
+  width:9vw;
+  display:flex;
+  justify-content: center;
+  background-color: var(--textColor);
+  color: var(--textwhite);
+  font-family: Raleway;
+  font-weight:500;
+  cursor:pointer;
+  border-radius: 5px;
+  align-items: center;
+}
+.language-name{
+  width:100%;
+  padding:10px;
+}
+.tech-name{
+  width:100%;
+  padding:7px;
+  border:1px solid var(--bordersides);
+  border-radius:5px;
+}
+.language-selector{
+  padding:10px;
+  width:100%; 
+}
+.selection{
+  padding:5px;
+  border-radius: 5px;
+  width:50%;
+  font-family: Raleway;
+  font-weight:500;
+  font-size: 15px;
+  border:1px solid var(--bordersides)
 }
 /* ------------- center section----------- */
 .section-container{
@@ -589,6 +717,7 @@ body{
 .add-skill:hover{
   cursor:pointer;
 }
+
 .skills-rating{
   margin-top:50px;
 }
@@ -638,7 +767,48 @@ body{
   justify-content: space-between;
   width:60%;
 }
-.edit-skill,.remove-skill{
+.edit-skills,.remove-skills{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--skillBackground);
+}
+.edit-skills1
+,.remove-skills1{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--skillBackground);
+}
+.edit-skills2,.remove-skills2{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--skillBackground);
+}
+.edit-skills3,.remove-skills3{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--skillBackground);
+}
+.edit-skills4,.remove-skills4{
   width:30px;
   height:30px;
   border-radius: 50%;
