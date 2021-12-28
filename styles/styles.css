@@ -154,8 +154,12 @@ li{
   color:white;
   font-family: Raleway;
   font-weight:500;
+  cursor:pointer;
 }
 .nav-container ul a li.active{
+  color: var(--textColor);
+}
+.nav-container ul li.active{
   color: var(--textColor);
 }
 button{
