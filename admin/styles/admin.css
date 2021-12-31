@@ -159,10 +159,12 @@ body{
   border-left:1px solid var(--bordersides);
 }
 .sidebar-holder{
+  position:fixed;
+  top:75px;
   padding-top:50px;
   padding-left:20px;
   padding-right:20px;
-
+  margin-top:30px;
 }
 .articles-container{
   width:100%;
@@ -421,6 +423,9 @@ body{
 .article-content{
   width:90%;
 
+}
+.fa-bars{
+display:none;
 }
 .article-content textarea{
   width:100%;
@@ -879,4 +884,3 @@ body{
   color:var(--textColor);
   font-size: 12px;
 }
-

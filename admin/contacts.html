@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="./styles/admin.css"/>
   <link rel="stylesheet" href="./styles/contacts.css"/>
+  <link rel="stylesheet" href="./styles/mobileview.css"/>
   <title>Contacts</title>
 </head>
 <body>
@@ -39,11 +40,15 @@
     </header>
     <content class="sections-container">
       <sidebar class="left-sidebar">
-        <div class="fixed-sidebar">
+        <div class="position-admin-links">
+          <div class="fixed-sidebar">
           <div class="title-holder">
           <h1 class="title">My-brand</h1>
           <div class="title-underline"></div>
         </div>
+        <i class="fa fa-bars"></i>
+        </div>
+        
         
         <div class="sidebar-holder">
           <div class="articles-container">
@@ -62,7 +67,7 @@
               </div>
             </div>
           </div>
-          <div class="contact-querries">
+          <div class="contact-querries contact">
             <i class="fa fa-caret-right"></i>
             <p class="contact-mesage">Contact Mesage</p>
           </div>
@@ -307,5 +312,6 @@
   </div>
 <!-- javascript -->
   <script src="./js/skillsModel.js"></script>
+  <script src="./js/adminHambuger.js"></script>
 </body>
 </html>
