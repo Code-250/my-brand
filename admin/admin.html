@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
   <link rel="stylesheet" href="./styles/admin.css"/>
+  <link rel="stylesheet" href="./styles/mobileview.css"/>
   <title>Admin</title>
 </head>
 <body>
@@ -26,7 +27,10 @@
               <h4 class="owner-name">Richard</h4>
             </div>
           </div>
+          <a href="../login.html">
             <div class="logout-btn">logout</div>
+          </a>
+            
           </div>
           <!-- <i class="fa fa-bars"></i> -->
           <div class="bottom-line"></div>
@@ -35,12 +39,14 @@
     </header>
     <content class="sections-container">
       <sidebar class="left-sidebar">
-        <div class="fixed-sidebar">
+        <div class="position-admin-links">
+          <div class="fixed-sidebar">
           <div class="title-holder">
-          <h1 class="title">My-brand</h1>
-          <div class="title-underline"></div>
+            <h1 class="title">My-brand</h1>
+            <div class="title-underline"></div>
+          </div>
+          <i class="fa fa-bars"></i> 
         </div>
-        
         <div class="sidebar-holder">
           <div class="articles-container">
             <div class="article-holder">
@@ -64,6 +70,8 @@
          </a> 
           
         </div>
+        </div>
+        
         </div>
 
         
@@ -419,5 +427,7 @@
 
   <!-- scripts -->
   <script src="./js/model.js"></script>
+  <script src="./js/skillsModel.js"></script>
+  <script src="./js/adminHambuger.js"></script>
 </body>
 </html>

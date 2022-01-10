@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="./styles/admin.css"/>
   <link rel="stylesheet" href="./styles/contacts.css"/>
+  <link rel="stylesheet" href="./styles/mobileview.css"/>
   <title>Contacts</title>
 </head>
 <body>
@@ -27,7 +28,10 @@
               <h4 class="owner-name">Richard</h4>
             </div>
           </div>
+          <a href="../login.html">
             <div class="logout-btn">logout</div>
+          </a>
+            
           </div>
           <!-- <i class="fa fa-bars"></i> -->
           <div class="bottom-line"></div>
@@ -36,11 +40,15 @@
     </header>
     <content class="sections-container">
       <sidebar class="left-sidebar">
-        <div class="fixed-sidebar">
+        <div class="position-admin-links">
+          <div class="fixed-sidebar">
           <div class="title-holder">
           <h1 class="title">My-brand</h1>
           <div class="title-underline"></div>
         </div>
+        <i class="fa fa-bars"></i>
+        </div>
+        
         
         <div class="sidebar-holder">
           <div class="articles-container">
@@ -59,7 +67,7 @@
               </div>
             </div>
           </div>
-          <div class="contact-querries">
+          <div class="contact-querries contact">
             <i class="fa fa-caret-right"></i>
             <p class="contact-mesage">Contact Mesage</p>
           </div>
@@ -122,6 +130,93 @@
             </div>
         </section>
       </content>
+
+      <!-- skills model -->
+
+      <div class="model" id="my-add-model">
+        <div class="model-content-skills">
+          <span class="close">&times;</span>
+          <div class="create-skill-title">
+            <p class="skills-header">Add Skill</p>
+            <div class="skills-underline"></div>
+          </div>
+          <form class="form-field">
+              <div class="language-name">
+              <input type="text" class="tech-name" placeholder="Language Title">
+            </div>
+            <div class="language-selector">
+              <select name="languages" class="selection">
+                <option value="0">Select a language</option>
+                <option value="1">Javascript</option>
+                <option value="2">Node js</option>
+                <option value="3">Vue js</option>
+                <option value="4">ReactJs</option>
+                <option value="5">Figma</option>
+              </select>
+            </div>
+            <div class="position-end">
+              <div class="save-language-cancel">
+              <div class="save-language-btn">Save</div>
+              <div class="cancel-language-btn">Cancel</div>
+            </div>
+          </form>
+          
+          </div>
+          
+        </div>
+      </div>
+      <div class="model" id="my-update-model">
+        <div class="model-content-skills">
+          <span class="close">&times;</span>
+          <div class="create-skill-title">
+            <p class="skills-header">Update Skill</p>
+            <div class="skills-underline"></div>
+          </div>
+          <form class="form-field">
+              <div class="language-name">
+              <input type="text" class="tech-name" placeholder="Language Title">
+            </div>
+            <div class="language-selector">
+              <select name="languages" class="selection">
+                <option value="0">Select a language</option>
+                <option value="1">Javascript</option>
+                <option value="2">Node js</option>
+                <option value="3">Vue js</option>
+                <option value="4">ReactJs</option>
+                <option value="5">Figma</option>
+              </select>
+            </div>
+            <div class="position-end">
+              <div class="save-language-cancel">
+              <div class="save-language-update-btn">Save</div>
+              <div class="cancel-language-update-btn">Cancel</div>
+            </div>
+          </form>
+          
+          </div>
+          
+        </div>
+      </div>
+      <div class="model" id="my-delete-skill-model">
+        <div class="model-content-delete">
+          <span class="close">&times;</span>
+          <div class="comfirm-delete">
+            <p class="deleted">Are you sure you want to remove this skill.</p>
+          </div>
+          <div class="comfirm-cancel">
+            <div class="comfirm-skill-delete">
+              Delete
+            </div>
+            <div class="cancel-skill-delete">
+              Cancel
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right sidebar -->
+
+
       <sidebar class="right-sidebar">
         <div class="fixed-right-sidebar">
           <div class="skill-bar">
@@ -130,16 +225,16 @@
               <div class="skill-underline"></div>
             </div>
             
-            <div class="add-skill">Add</div>
+            <div class="add-skill" id="add-skill">Add</div>
           </div>
           <div class="skills-rating">
             <div class="skill-content">
               <div class="skill-name">
                 <h3 class="name-skill">Javascript</h3>
-                <div class="edit-skill">
+                <div class="edit-skills">
                   <i class="fas fa-pen"></i>
                 </div>
-                <div class="remove-skill">
+                <div class="remove-skills">
                   <i class="fas fa-trash-alt"></i>
                 </div>
               </div>
@@ -151,10 +246,10 @@
             <div class="skill-content">
               <div class="skill-name">
                 <h3 class="name-skill">React.Js</h3>
-                <div class="edit-skill">
+                <div class="edit-skills1">
                   <i class="fas fa-pen"></i>
                 </div>
-                <div class="remove-skill">
+                <div class="remove-skills1">
                   <i class="fas fa-trash-alt"></i>
                 </div>
               </div>
@@ -166,10 +261,10 @@
             <div class="skill-content">
               <div class="skill-name">
                 <h3 class="name-skill">HTML</h3>
-                <div class="edit-skill">
+                <div class="edit-skills2">
                   <i class="fas fa-pen"></i>
                 </div>
-                <div class="remove-skill">
+                <div class="remove-skills2">
                   <i class="fas fa-trash-alt"></i>
                 </div>
               </div>
@@ -181,10 +276,10 @@
             <div class="skill-content">
               <div class="skill-name">
                 <h3 class="name-skill">NodeJs</h3>
-                <div class="edit-skill">
+                <div class="edit-skills3">
                   <i class="fas fa-pen"></i>
                 </div>
-                <div class="remove-skill">
+                <div class="remove-skills3">
                   <i class="fas fa-trash-alt"></i>
                 </div>
               </div>
@@ -196,10 +291,10 @@
             <div class="skill-content">
               <div class="skill-name">
                 <h3 class="name-skill">CSS</h3>
-                <div class="edit-skill">
+                <div class="edit-skills4">
                   <i class="fas fa-pen"></i>
                 </div>
-                <div class="remove-skill">
+                <div class="remove-skills4">
                   <i class="fas fa-trash-alt"></i>
                 </div>
               </div>
@@ -215,5 +310,8 @@
       </sidebar>
     </content>
   </div>
+<!-- javascript -->
+  <script src="./js/skillsModel.js"></script>
+  <script src="./js/adminHambuger.js"></script>
 </body>
 </html>
