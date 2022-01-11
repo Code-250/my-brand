@@ -80,6 +80,7 @@
   font-weight:600;
   color:var(--textSecondColor);
   border:none;
+  width:80%;
 }
 .guest-email{
   padding:12px;
@@ -89,6 +90,7 @@
   font-weight:600;
   color:var(--textSecondColor);
   margin:12px;
+  width:80%;
 }
 #message{
   padding:12px;
@@ -98,9 +100,13 @@
   font-weight:600;
   color:var(--textSecondColor);
   margin:12px;
+  width:80%;
 }
 .contact-inputs{
   position: relative;
+}
+.input-group{
+  min-width:100%;
 }
 .contact-btns{
   border:4px solid var(--textwhite);
@@ -146,6 +152,16 @@
   color:var(--textwhite);
   font-size: 40px;
 
+}
+.error-message {
+  font-size: .85rem;
+  color: red;
+  font-family:Raleway;
+  margin-top:-5px;
+}
+.input-group{
+  display:flex;
+  flex-direction: column;
 }
 .back-to-top:hover{
   cursor:pointer;

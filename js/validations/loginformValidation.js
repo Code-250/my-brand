@@ -41,7 +41,6 @@ const validateEmail = (email) => {
 
 const validatePassword = (password, minLength) => {
   if (!password) return "Password is required";
-  let isPasswordValid = false;
   if (password.length < minLength) {
     return `Please enter a password that's at least ${minLength} characters long`;
   }
