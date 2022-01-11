@@ -11,7 +11,14 @@ const handleContact = (e) => {
     const guestNameErrorMessageElement = document.querySelector(
       ".name.error-message"
     );
+    guestNameErrorMessageElement.classList.remove("hidden");
     guestNameErrorMessageElement.innerText = guestNameErrorMessage;
+  } else {
+    const guestNameErrorMessageElement = document.querySelector(
+      ".name.error-message"
+    );
+    guestNameErrorMessageElement.classList.add("hidden");
+    guestNameErrorMessageElement.innerText = " ";
   }
   if (contactEmailErrorMessage) {
     const contactEmailErrorMessageElement = document.querySelector(
@@ -27,7 +34,9 @@ const handleContact = (e) => {
   }
 };
 const validateGuestName = (name) => {
-  if (!name) return "name is required";
+  if (name.trim() === " ") {
+    return "name is required";
+  }
   return " ";
 };
 const validateEmail = (email) => {
