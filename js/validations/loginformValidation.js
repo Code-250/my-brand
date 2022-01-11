@@ -26,6 +26,11 @@ const handleLogin = (e) => {
     passwordErrorMessageElement.innerText = passowrdErrorMessage;
   }
   if ((emailErrorMessage === " ") & (passowrdErrorMessage === " ")) {
+    const saveEmail = JSON.stringify(email);
+    const savePassword = JSON.stringify(password);
+    console.log(saveEmail, savePassword);
+    localStorage.setItem("email", saveEmail);
+    localStorage.setItem("password", savePassword);
     window.location.replace("http://127.0.0.1:5500/admin/admin.html");
   }
 };
