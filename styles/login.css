@@ -21,7 +21,7 @@
 
 .container{
   width:100%;
-  height:100vh;
+  min-height:100vh;
   background-color: #1B242F;
   position: relative;
 }
@@ -30,7 +30,7 @@
   display:flex;
   flex-direction: column;
   width:30vw;
-  height:59vh;
+  min-height:65vh;
   border-radius: 10px;
   position:absolute;
   top:20%;
@@ -51,7 +51,7 @@
 }
 .login-content{
   background-color: #252934;
-  height:40vh;
+  min-height:40vh;
   width:26vw;
   border-radius: 10px;
   display:flex;
@@ -69,6 +69,9 @@
   border-radius:2px;
   margin-top:60px;
   color:#5A5A5A
+}
+.input.input-error{
+  border:1px solid red;
 }
 #password{
   padding:10px;
@@ -105,6 +108,31 @@
   font-weight:400;
   margin-top: -10px;
 }
+.hidden{
+  display:none;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 32px;
+  right: 5px;
+  pointer-events: none;
+  z-index: 2;
+}
+.icon.icon-success {
+  fill: green;
+}
+
+.icon.icon-error {
+  fill: red;
+}
+.error-message {
+  font-size: .85rem;
+  color: red;
+  font-family:Raleway;
+  margin-top:.8rem;
+}
 @media screen and (max-width:768px){
   .content{
     width:80%;
@@ -128,5 +156,9 @@
     width:25vw;
     height:30px;
     margin: auto;
+    margin-top:20px;
+  }
+  .go-back{
+    margin-top:40px;
   }
 }

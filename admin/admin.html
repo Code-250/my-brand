@@ -27,9 +27,9 @@
               <h4 class="owner-name">Richard</h4>
             </div>
           </div>
-          <a href="../login.html">
+          <!-- <a href="../login.html"> -->
             <div class="logout-btn">logout</div>
-          </a>
+          <!-- </a> -->
             
           </div>
           <!-- <i class="fa fa-bars"></i> -->
@@ -429,5 +429,14 @@
   <script src="./js/model.js"></script>
   <script src="./js/skillsModel.js"></script>
   <script src="./js/adminHambuger.js"></script>
+  <script>
+    const logoutBtn = document.querySelector(".logout-btn");
+    logoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("email");
+      localStorage.removeItem("password");
+      window.location.replace("http://127.0.0.1:5500/login.html");
+    });
+  </script>
 </body>
 </html>

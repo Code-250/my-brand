@@ -11,19 +11,27 @@
   <div class="container">  
     <div class="content">
       <h2 class="title">Welcome <span>ADMIN.</span></h2>
-      <div class="login-content">
-        <input type='email' placeholder="Enter your email" name="email" id="email">
-        <input type='password' placeholder="Enter your password" name="password" id="password">
-        <a href="./admin/admin.html">
-          <div class="login-btn">Login</div>
-        </a>
+      <form action="#" class="login-content"> 
+        <div class="input-group">
+          <input autofocus type='email' placeholder="Enter your email" name="email" class="input input-error" required id="email">
+          <span class="email error-message"></span>
+        </div>
+        <div class="input-group">
+          <input type='password' required placeholder="Enter your password" class="input input-error"name="password" id="password">
+          <span class="password error-message"></span>
+        </div>
+        
+        <!-- <a href="./admin/admin.html"> -->
+          <div class="login-btn " type="submit">Login</div>
+        <!-- </a> -->
         <a href="./index.html" class="go-back">
           <div class="back-to-home">Go back Home</div>
         </a>
         
-      </div>
+      </form>
       
     </div>
   </div>
+  <script src="./js/validations/loginformValidation.js"></script>
 </body>
 </html>
