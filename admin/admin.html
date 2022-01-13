@@ -12,6 +12,11 @@
 
   <link rel="stylesheet" href="./styles/admin.css"/>
   <link rel="stylesheet" href="./styles/mobileview.css"/>
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+ 
+  
+<!-- <script>tinymce.init({selector:'textarea'});</script> -->
+
   <title>Admin</title>
 </head>
 <body>
@@ -86,17 +91,20 @@
           </div>
           <form class="create-article-form">
             <div class="create-article-title">
-              <input type="text" class="title-create" placeholder="Article Title">
+              <input autofocus type="text" name="title" class="title-create"  placeholder="Article Title">
+              <span class="title-error error-message"></span>
             </div>
             <div class="upload-article-image">
-              <input type="file" class="article-picture" accept="image/x-jpeg,image/x-png">
+              <input type="file" name="file" class="article-picture" accept="image/x-jpeg,image/x-png">
 
             </div>
             <div class="preview-picture">
-              Preview Image
+              <img id="image-preview" src="" width="100%" height="100%"alt=""/>
+              <span class="preview-picture-alt">Image Preview</span>
             </div>
             <div class="article-content">
-              <textarea name="article" id="" cols="30" rows="10" placeholder="article description" class="detailed-article-description"></textarea>
+              <textarea name="description" id="" cols="30" rows="10" placeholder="article description" class="detailed-article-description ckeditor"></textarea>
+              <span class="detailed-description error-message"></span>
             </div>
             <div class="position-content">
               <div class="submit-cancel-btn">
@@ -121,17 +129,20 @@
           </div>
           <form class="create-article-form">
             <div class="create-article-title">
-              <input type="text" class="title-create" placeholder="Article Title">
+              <input type="text" class="title-update" name="title" placeholder="Article Title">
+              <span class="title-update-error error-message hidden">title is required</span>
             </div>
             <div class="upload-article-image">
-              <input type="file" class="article-picture" accept="image/x-jpeg,image/x-png">
+              <input type="file" class="article-picture-update" accept="image/x-jpeg,image/x-png">
 
             </div>
             <div class="preview-picture">
-              Preview Image
+              <img id="image-preview-update" src="" width="100%" height="100%"alt=""/>
+              <span class="preview-picture-alt">Image Preview</span>
             </div>
             <div class="article-content">
-              <textarea name="article" id="" cols="30" rows="10" placeholder="article description" class="detailed-article-description"></textarea>
+              <textarea name="description" id="" cols="30" rows="10" placeholder="article description" class="detailed-update-description"></textarea>
+              <span class="detailed-update-description error-message hidden">Body is required</span>
             </div>
             <div class="position-content">
               <div class="submit-cancel-btn">
@@ -169,82 +180,6 @@
         </div>
         <section class="section-content">
           
-            <div class="article-card">
-              <a href="../article.html">
-              <div class="article-owner-image">
-                <img src="../assets/read.jpg" alt="importance of reading" width="400" height="350"/>
-              </div>
-              <div class="article-title-date">
-                <h3 class="title-articles">The Importance of reading</h3>
-                <p class="date-article">march, 12,2021</p>
-                <div class="article-line"></div>
-              </div>
-              <div class="article-description">
-                <p class="blog-content-description">The same way we feed our bellies, should be the same way that we should feed our brain. But how can we feed our brains? one way that issgnificant it is through reading....</p>
-              </div>
-            </a>
-               <div class="edit-delete">
-                <div class="edit-skill-article" id="edit-skill">
-                  <i class="fas fa-pen"></i>
-                </div>
-                <div class="delete-blog">
-                  <i class="fas fa-trash-alt"></i>
-                </div>
-              </div>
-            </div>
-          
-           
-            
-              <div class="article-card">
-                <a href="../article.html">
-              <div class="article-owner-image">
-                <img src="../assets/read.jpg" alt="importance of reading" width="400" height="350"/>
-              </div>
-              <div class="article-title-date">
-                <h3 class="title-articles">The Importance of reading</h3>
-                <p class="date-article">march, 12,2021</p>
-                <div class="article-line"></div>
-              </div>
-              <div class="article-description">
-                <p class="blog-content-description">The same way we feed our bellies, should be the same way that we should feed our brain. But how can we feed our brains? one way that issgnificant it is through reading....</p>
-              </div>
-            </a>
-              <div class="edit-delete">
-                <div class="edit-skill-article" id="edit-skill1">
-                  <i class="fas fa-pen"></i>
-                </div>
-                <div class="delete-blog1">
-                  <i class="fas fa-trash-alt"></i>
-                </div>
-              </div>
-            </div>
-            
-             
-            
-              <div class="article-card">
-                <a href="../article.html">
-              <div class="article-owner-image">
-                <img src="../assets/read.jpg" alt="importance of reading" width="400" height="350"/>
-              </div>
-              <div class="article-title-date">
-                <h3 class="title-articles">The Importance of reading</h3>
-                <p class="date-article">march, 12,2021</p>
-                <div class="article-line"></div>
-              </div>
-              <div class="article-description">
-                <p class="blog-content-description">The same way we feed our bellies, should be the same way that we should feed our brain. But how can we feed our brains? one way that issgnificant it is through reading....</p>
-              </div>
-            </a>
-               <div class="edit-delete">
-                <div class="edit-skill-article" id="edit-skill2">
-                  <i class="fas fa-pen"></i>
-                </div>
-                <div class="delete-blog2">
-                  <i class="fas fa-trash-alt"></i>
-                </div>
-              </div>
-            </div>
-            
              
         </section>
       </content>
@@ -429,13 +364,22 @@
   <script src="./js/model.js"></script>
   <script src="./js/skillsModel.js"></script>
   <script src="./js/adminHambuger.js"></script>
+  <script src="js/blogs.js"></script>
   <script>
     const logoutBtn = document.querySelector(".logout-btn");
     logoutBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      localStorage.removeItem("loginCredentials")
-      window.location.replace("https://richmunye.netlify.app/login.html");
+      
+      const newCredentials = localStorage.getItem("loginCredentials")
+      const cred = JSON.parse(newCredentials)
+      cred.isLoggedIn = false;
+      const credentials = JSON.stringify(cred)
+      localStorage.setItem("loginCredentials", credentials);
+      window.location.replace("../login.html");
     });
+
+
+    
   </script>
 </body>
 </html>

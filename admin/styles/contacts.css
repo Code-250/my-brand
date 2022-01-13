@@ -44,6 +44,15 @@
 .article-holder{
   padding-bottom: 5px;
 }
+.edit-delete-message{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0px 30px 0px 10px;
+}
+.location{
+  color:var(--textSecondColor)
+}
 .message-card{
   border:1px solid var(--bordersides);
   height:35vh;

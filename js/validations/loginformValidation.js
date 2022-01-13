@@ -27,16 +27,20 @@ const handleLogin = (e) => {
   }
   if ((emailErrorMessage === " ") & (passowrdErrorMessage === " ")) {
     const loginCredentials = {
+      isLoggedIn: true,
       email,
       password,
     };
     const saveCredentials = JSON.stringify(loginCredentials);
     console.log(saveCredentials);
     localStorage.setItem("loginCredentials", saveCredentials);
-    if (!localStorage.getItem("loginCredentials")) {
-      window.location.replace("https://richmunye.netlify.app/login.html");
+
+    if (loginCredentials.isLoggedIn === false) {
+      window.location.replace("../login.html");
+    } else {
+      window.location.replace("./admin/admin.html");
     }
-    window.location.replace("https://richmunye.netlify.app/admin/admin.html");
+    
   }
 };
 const validateEmail = (email) => {
