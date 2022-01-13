@@ -33,6 +33,9 @@ const handleLogin = (e) => {
     const saveCredentials = JSON.stringify(loginCredentials);
     console.log(saveCredentials);
     localStorage.setItem("loginCredentials", saveCredentials);
+    if (!localStorage.getItem("loginCredentials")) {
+      window.location.replace("https://richmunye.netlify.app/login.html");
+    }
     window.location.replace("https://richmunye.netlify.app/admin/admin.html");
   }
 };
