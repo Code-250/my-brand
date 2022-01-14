@@ -59,11 +59,11 @@ const handleComments = (e) => {
   getComments();
 };
 const validateName = (name) => {
-  if (!name.trim()) return "Password is required";
+  if (!name.trim()) return "Name field is required";
   return " ";
 };
 const validateCommentField = (comment) => {
-  if (!comment.trim()) return "Password is required";
+  if (!comment.trim()) return "Comment field is required";
   return " ";
 };
 const getComments = () => {
