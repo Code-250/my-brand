@@ -184,7 +184,7 @@
 .subscribe{
   border:2px solid var(--textSecondColor);
   padding:8px;
-  margin-right:50px;
+  margin-right:100px;
   border-radius:10px;
   text-align: center;
   font-family: Raleway;
@@ -196,18 +196,47 @@
   padding:5px 60px 20px 10px;
   margin:auto;
   position: relative;
-  min-height:40vh;
+  min-height:55vh;
   
 }
-#comment{
-  width:100%;
+.input-group{
+  margin-left:60px;
+}
+.input-group-name{
+   margin-left:60px;
+  margin-bottom:40px;
+  display:flex;
+  flex-direction:column;
+}
+.error-message{
+  font-family: Raleway;
+  font-weight:500;
+  font-size:15px;
+  color:red;
+}
+.hidden{
+  display:none
+}
+.names{
+  width:90%;
   border:1px solid var(--textSecondColor);
   border-radius: 10px;
+  padding:10px 10px;
+ 
+}
+.text-area{
+  padding-bottom:20px;
+}
+#comment{
+  width:90%;
+  border:1px solid var(--textSecondColor);
+  border-radius: 10px;
+  padding:10px 10px;
 }
 .comment-btn{
   position:absolute;
-  top:180px;
-  left:645px;
+  top:340px;
+  left:590px;
   right:0;
   padding:10px;
   text-align:center;
@@ -276,6 +305,21 @@
   height:50px;
 }
 
+.likes{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  color:var(--textColor);
+  margin: 0 30px;
+  width: 8vw;
+  font-family: Raleway;
+  font-weight:600;
+  font-size:25px;
+  margin-left:70px;
+}
+.fa-thumbs-up{
+  cursor:pointer
+}
 /* ---- mobine view */
 
 @media screen and (max-width:768px){

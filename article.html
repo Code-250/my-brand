@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   <link rel="stylesheet" href="./styles/article.css"/>
   <title>Blog-article</title>
 
@@ -120,6 +124,10 @@
       <div class="blog-final-line">
 
       </div>
+      <div class="likes">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <p class="likes-data"></p>
+      </div>
       <div class="blog-comment">
         <div class="comments-title">
           <h3 class="guest-comment">Comments</h3>
@@ -127,31 +135,22 @@
             subscribe
           </div>
         </div>
-        <div class="comments-input">
-          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-          <div class="comment-btn">SEND</div>
-        </div>
-        <div class="comments-container">
-          <div class="comment-guest">
-          <div class="guest-profile">
-            <img src="./assets/rich-bw.jpg" alt="guest profile picture" class="guest">
+        <form class="comments-input">
+          <div class="input-group-name">
+            <label for="name" class="name-label">Name :</label>
+            <input type="text" name="name" class="names">
+            <span class="name error-message"></span>
           </div>
-
-        <div class="comment-holder">
-          <div class="guest-comment">
-            <h6 class="guest-name">Richard</h6>
-            <p class="guest-dot">.</p>
-            <p class="date">Dec, 2, 2021</p>
+          <div class="input-group">
+            <label for="textarea" class="text-area">Comment :</label>
+            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            <span class="comment error-message"></span>
           </div>
-          <div class="comment-description">
-            <p class="comment">
-              I am very gratefull for what you have
-              shared here you just saved a life
-            </p>
-          </div>
-        </div>
           
-        </div>
+          <div class="comment-btn">SEND</div>
+        </form>
+        <div class="comments-container">
+          
 
         <div class="comment-guest">
           <div class="guest-profile">
@@ -195,5 +194,6 @@
       </div>
     </div>
   </div>
+  <script src="./js/likeComment.js"></script>
 </body>
 </html>
