@@ -71,8 +71,9 @@ const getComments = () => {
   const retrievedComments = JSON.parse(retrieveComments);
 
   const assignData = document.querySelector(".comments-container");
-  retrievedComments.forEach((element) => {
-    assignData.innerHTML += `<div class="comment-guest">
+  if (retrieveComments !== null) {
+    retrievedComments?.forEach((element) => {
+      assignData.innerHTML += `<div class="comment-guest">
           <div class="guest-profile">
             <img src="./assets/rich-bw.jpg" alt="guest profile picture" class="guest">
           </div>
@@ -91,7 +92,9 @@ const getComments = () => {
         </div>
           
         </div>`;
-  });
+    });
+  }
+ 
 };
 getComments();
 SubmitComment.addEventListener("click", handleComments);
