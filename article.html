@@ -80,5 +80,27 @@
   </div>
   <script src="./js/likeComment.js"></script>
   <script src="./js/blog.js"></script>
+  <script>
+    const newCredentials = localStorage.getItem("loginCredentials");
+    const logInValue = document.querySelector(".login");
+    const cred = JSON.parse(newCredentials);
+    if (cred.isLoggedIn === false) {
+      logInValue.innerHTML = `<p class="login-text">LogIn</p>`;
+    } else {
+      logInValue.innerHTML = `<p class="login-text">Logout</p>`;
+      const logoutBtn = document.querySelector(".login");
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        const newCredentials = localStorage.getItem("loginCredentials")
+        const cred = JSON.parse(newCredentials)
+        cred.isLoggedIn = false;
+        const credentials = JSON.stringify(cred)
+        localStorage.setItem("loginCredentials", credentials);
+        window.location.replace("../login.html");
+      });
+    }
+
+  </script>
 </body>
 </html>

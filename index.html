@@ -111,13 +111,21 @@
     </section>
     <div class="fixed-navbar">
       <div class="nav-container">
-        <ul>
+        <div class="nav">
+          <ul>
           <li class="home-link active">HOME</li>
           <li class="about-link">ABOUT ME</li>
           <li class="portfolio-link">PORTFOLIO</li>
           <li class="blog-link">BLOG</li>
           <li class="contact-link">CONTACT</li>
         </ul>
+        <a href="./login.html">
+         <div class="login">
+          
+        </div>
+       </a> 
+        </div>
+        
         <i class="fa fa-bars"></i> 
         <div class="bottom-line"></div>
       </div>
@@ -503,10 +511,28 @@
     <script src="./js/scrollable.js"></script>
     <script src="./js/validations/contactMessage.js"></script>
     <script src="./js/blogs.js"></script>
-    
     <script>
-      
-    </script>
+      const newCredentials = localStorage.getItem("loginCredentials");
+      const logInValue = document.querySelector(".login");
+      const cred = JSON.parse(newCredentials);
+      if (cred.isLoggedIn === false) {
+        logInValue.innerHTML = `<p class="login-text">LogIn</p>`;
+      } else {
+        logInValue.innerHTML = `<p class="login-text">Logout</p>`;
+
+        const logoutBtn = document.querySelector(".login");
+        logoutBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          
+          const newCredentials = localStorage.getItem("loginCredentials")
+          const cred = JSON.parse(newCredentials)
+          cred.isLoggedIn = false;
+          const credentials = JSON.stringify(cred)
+          localStorage.setItem("loginCredentials", credentials);
+          window.location.replace("../login.html");
+        });
+      }
+  </script>
     <!-- <script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyCvDhommj0VRvjGyvaSKwv4RrBNxFfLEnw"></script> -->
   </body>
 </html>
