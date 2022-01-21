@@ -24,6 +24,31 @@
   height:100vh;
   position:relative;
 }
+.nav{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:96%;
+}
+.login{
+
+  border:3px solid var(--skillanim);
+  padding:7px;
+  width:6vw;
+  text-align: center;
+}
+.login-text{
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 15px;
+  color:var(--textwhite);
+}
+.login:hover{
+  border:3px solid var(--skillanim);
+  background-color: var(--skillanim);
+  transition:0.4s ease-in-out;
+  cursor:pointer;
+}
 #title{
   position: absolute;
   top: 40%;

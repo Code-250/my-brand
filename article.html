@@ -42,86 +42,10 @@
   
   <div class="container">
     <div class="content">
-      <div class="blog-image">
-        <img src="./assets/docker.jpg" alt="dockeriziation working ahead" class="blog-picture">
-      </div>
-      <div class="blogger-profile-date">
-        <div class="blogger-image">
-          <img src="./assets/rich-bw.jpg" alt="blog owner profile picture" class="blogger">
-        </div>
-        <div class="blogger-name-date">
-          <h6 class="blogger-name">Rich Munye</h6>
-          <p class="date-posted">March, 12, 2021</p>
-        </div>
-      </div>
-      <div class="blog-title-container">
-        <h3 class="title-blog">
-          The Importance of reading!
-        </h3>
-      </div>
-      <div class="blog-full-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
+      <div class="blog-article-content">
 
-          </p><br>
-          <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-
-          </p><br>
-           <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-
-          </p><br>
-          <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-           Accusantium, iusto incidunt nemo ratione nesciunt rerum 
-           laboriosam! Tempora facere culpa aspernatur ullam, et sit! 
-           Quo, provident. Animi illo non nam ratione?
-
-          </p><br>
-      </div>
-      <div class="blog-final-line">
+        
+        
 
       </div>
       <div class="likes">
@@ -150,50 +74,33 @@
           <div class="comment-btn">SEND</div>
         </form>
         <div class="comments-container">
-          
-
-        <div class="comment-guest">
-          <div class="guest-profile">
-            <img src="./assets/rich-bw.jpg" alt="guest profile picture" class="guest">
-          </div>
-          <div class="comment-holder">
-            <div class="guest-comment">
-            <h6 class="guest-name">Richard</h6>
-            <p class="guest-dot">.</p>
-            <p class="date">Dec, 2, 2021</p>
-          </div>
-          <div class="comment-description">
-            <p class="comment">
-              I am very gratefull for what you have
-              shared here you just saved a life
-            </p>
-          </div>
-        </div>
-          </div>
-          
-        <div class="comment-guest">
-          <div class="guest-profile">
-            <img src="./assets/rich-bw.jpg" alt="guest profile picture" class="guest">
-          </div>
-          <div class="comment-holder">
-            <div class="guest-comment">
-            <h6 class="guest-name">Richard</h6>
-            <p class="guest-dot">.</p>
-            <p class="date">Dec, 2, 2021</p>
-          </div>
-          <div class="comment-description">
-            <p class="comment">
-              I am very gratefull for what you have
-              shared here you just saved a life
-            </p>
-          </div>
-          </div>
-          
-        </div>
         </div>
       </div>
     </div>
   </div>
   <script src="./js/likeComment.js"></script>
+  <script src="./js/blog.js"></script>
+  <script>
+    const newCredentials = localStorage.getItem("loginCredentials");
+    const logInValue = document.querySelector(".login");
+    const cred = JSON.parse(newCredentials);
+    if (cred.isLoggedIn === false) {
+      logInValue.innerHTML = `<p class="login-text">LogIn</p>`;
+    } else {
+      logInValue.innerHTML = `<p class="login-text">Logout</p>`;
+      const logoutBtn = document.querySelector(".login");
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        const newCredentials = localStorage.getItem("loginCredentials")
+        const cred = JSON.parse(newCredentials)
+        cred.isLoggedIn = false;
+        const credentials = JSON.stringify(cred)
+        localStorage.setItem("loginCredentials", credentials);
+        window.location.replace("../login.html");
+      });
+    }
+
+  </script>
 </body>
 </html>
