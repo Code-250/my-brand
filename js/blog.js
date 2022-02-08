@@ -1,5 +1,7 @@
 
+
 const navBar = document.querySelector(".profile-full");
+
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 let article = document.querySelector(".blog-article-content");
@@ -15,10 +17,7 @@ if (getUser) {
             <h5 class="owner-name">${getUser.user.userName}</h5>
           </div>`;
 }
-console.log(getUser);
-console.log(id);
 getArticle?.forEach((element) => {
-  console.log(id);
   if (id == element.id) {
     console.log(id, element.id);
     article.innerHTML = `<div class="blog-image">

@@ -1,7 +1,6 @@
 // populating data  in the dashboard
 
 const newCredentials = localStorage.getItem("loginCredentials");
-const cred = JSON.parse(newCredentials);
 if (!newCredentials) {
   window.location.replace("../login.html");
 }

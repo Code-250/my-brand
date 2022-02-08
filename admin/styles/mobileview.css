@@ -244,6 +244,7 @@ body{
   width:90%;
   padding:10px;
   margin:60px auto;
+  min-height:100vh;
 }
 .model-title{
   padding:10px;
@@ -258,7 +259,9 @@ body{
 .create-article-form{
   width:100%;
   margin-top:20px;
+  position:relative;
   padding-top:5px;
+  height:100vh;
 }
 .create-article-title{
   padding:5px;
@@ -285,6 +288,8 @@ body{
 .position-content{
   padding-top:20px;
   justify-content: center;
+  position: absolute;
+  top:500px;
 }
 .submit-cancel-btn{
   width:100%;
@@ -293,6 +298,9 @@ body{
   width:28vw;
 }
 .submit-btn{
+  width:28vw;
+}
+.cancel-btn{
   width:28vw;
 }
 .cancel-update-btn{
@@ -306,5 +314,9 @@ body{
 
 .message-card{
   min-height:48vh;
+}
+.error-message{
+  margin-left:50px;
+  margin-top:2px;
 }
 }
