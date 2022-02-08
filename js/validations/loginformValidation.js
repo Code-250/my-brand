@@ -26,17 +26,46 @@ const handleLogin = (e) => {
     passwordErrorMessageElement.innerText = passowrdErrorMessage;
   }
   if ((emailErrorMessage === " ") & (passowrdErrorMessage === " ")) {
-    const loginCredentials = {
-      email,
-      password,
-    };
-    const saveCredentials = JSON.stringify(loginCredentials);
-    console.log(saveCredentials);
-    localStorage.setItem("loginCredentials", saveCredentials);
-    if (!localStorage.getItem("loginCredentials")) {
-      window.location.replace("https://richmunye.netlify.app/login.html");
-    }
-    window.location.replace("https://richmunye.netlify.app/admin/admin.html");
+    fetch("https://my-brand-server.herokuapp.com/api/v1/users/login", {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
+        "Access-Control-Cross-origin": "*",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => {
+        email === null;
+        password === null;
+        return res.json();
+      })
+      .then((data) => {
+        if (data.status === 200) {
+          const token = data.data.token;
+          console.log(token, data.data.foundEmail.role);
+          const loginCredentials = {
+            role: data.data.foundEmail.role,
+            token: token,
+            user: data.data.foundEmail,
+          };
+          const saveCredentials = JSON.stringify(loginCredentials);
+          // console.log(saveCredentials);
+          localStorage.setItem("loginCredentials", saveCredentials);
+
+          if (loginCredentials.role === null) {
+            window.location.replace("../login.html");
+          } else if (loginCredentials.role === "guest") {
+            window.location.replace("../../index.html");
+          } else {
+            window.location.replace("./admin/admin.html");
+          }
+        }
+      });
+   
+    
   }
 };
 const validateEmail = (email) => {

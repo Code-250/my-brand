@@ -21,12 +21,7 @@
       </ul>
       <div class="content-link">
         <div class="profile-full">
-          <div class="profile">
-            <img src="./assets/rich-bw.jpg" alt="blog owner profile" class="profile-picture"> 
-          </div>
-          <div class="name-owner">
-            <h5 class="owner-name">Richard</h5>
-          </div>
+        
         </div>
        <a href="./login.html">
          <div class="login">
@@ -195,5 +190,23 @@
     </div>
   </div>
   <script src="./js/likeComment.js"></script>
+  <script src="./js/blog.js"></script>
+  <script>
+    const newCredentials = localStorage.getItem("loginCredentials");
+    const logInValue = document.querySelector(".login");
+    if (!newCredentials) {
+      logInValue.innerHTML = `<p class="login-text">LogIn</p>`;
+    } else {
+      logInValue.innerHTML = `<p class="login-text">Logout</p>`;
+      const logoutBtn = document.querySelector(".login");
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+         localStorage.removeItem("loginCredentials")
+        window.location.replace("../login.html");
+      });
+    }
+
+  </script>
 </body>
 </html>

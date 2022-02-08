@@ -74,7 +74,7 @@
 
   border:3px solid var(--skillanim);
   padding:7px;
-  width:4vw;
+  width:6vw;
   text-align: center;
 }
 .login-text{
@@ -184,7 +184,7 @@
 .subscribe{
   border:2px solid var(--textSecondColor);
   padding:8px;
-  margin-right:100px;
+  margin-right:20px;
   border-radius:10px;
   text-align: center;
   font-family: Raleway;
@@ -203,8 +203,8 @@
   margin-left:60px;
 }
 .input-group-name{
-   margin-left:60px;
   margin-bottom:40px;
+  margin-left:60px;
   display:flex;
   flex-direction:column;
 }
@@ -235,12 +235,12 @@
 }
 .comment-btn{
   position:absolute;
-  top:340px;
-  left:590px;
+  top:300px;
+  left:555px;
   right:0;
   padding:10px;
   text-align:center;
-  width:7vw;
+  width:9vw;
   font-family: Raleway;
   font-weight:600;
   border-radius:10px ;
@@ -311,11 +311,10 @@
   align-items: center;
   color:var(--textColor);
   margin: 0 30px;
-  width: 8vw;
+  width: 9vw;
   font-family: Raleway;
   font-weight:600;
   font-size:25px;
-  margin-left:70px;
 }
 .fa-thumbs-up{
   cursor:pointer
@@ -333,13 +332,13 @@
     padding:0px 20px 0px 20px;
   }
   .content-link{
-    width:45vw;
+    width:60vw;
   }
   .login{
-    width:10vw;
+    width:17vw;
   }
   .profile-full{
-    width:25vw;
+    width:30vw;
   }
   .content{
     width:95%;
@@ -360,8 +359,8 @@
   }
   .comments-input{
     width:90%;
-    margin-left:10px;
     padding:0;
+    margin:auto;
   }
   .comments-container{
     width:95%;
@@ -375,9 +374,5 @@
   .comment-holder{
     width:90%;
     margin:0px 20px 0px 20px;
-  }
-  .comment-btn{
-    left:200px;
-    width:25vw;
   }
 }

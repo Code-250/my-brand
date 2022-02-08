@@ -268,5 +268,17 @@
   <script src="./js/skillsModel.js"></script>
   <script src="./js/adminHambuger.js"></script>
   <script src='./js/queryMesssage.js'></script>
+   <script>
+    const logoutBtn = document.querySelector(".logout-btn");
+    logoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      
+      localStorage.removeItem("loginCredentials")
+      window.location.replace("../login.html");
+    });
+
+
+    
+  </script>
 </body>
 </html>
