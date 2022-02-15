@@ -1,17 +1,26 @@
-const newCredentials = localStorage.getItem("loginCredentials");
-const cred = JSON.parse(newCredentials);
-if (cred.isLoggedIn === false) {
-  window.location.replace("../login.html");
-}
+const loginCredentials = JSON.parse(localStorage.getItem("loginCredentials"));
+const token = loginCredentials.token;
+console.log(token);
 
-const contacts = localStorage.getItem("contact-message");
 const section = document.querySelector(".section-content");
-const contact = JSON.parse(contacts);
-console.log(contact);
-contact?.forEach((message) => {
-  section.innerHTML += `<div class="message-card">
+const queries = async () => {
+  const getQueries = await fetch(
+    "https://my-brand-server.herokuapp.com/api/v1/queries/all-messages",
+    {
+      method: "GET",
+      headers: {
+        "content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  const data = await getQueries.json();
+  console.log(data);
+  const contacts = data.data;
+  contacts.forEach((message) => {
+    section.innerHTML += `<div class="message-card">
               <div class="article-title-date">
-                <h3 class="title-articles">${message.name}</h3>
+                <h3 class="title-articles">${message.guestName}</h3>
                 <p class="date-article">${message.email}</p>
                 <div class="article-line"></div>
               </div>
@@ -27,5 +36,6 @@ contact?.forEach((message) => {
                 </div>
               </div>
             </div>`;
-  console.log(message);
-});
+  });
+};
+queries();

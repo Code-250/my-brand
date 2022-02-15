@@ -30,7 +30,7 @@
   align-items: center;
   width:96%;
 }
-.login{
+.login-desk{
 
   border:3px solid var(--skillanim);
   padding:7px;
@@ -44,7 +44,7 @@
   font-size: 15px;
   color:var(--textwhite);
 }
-.login:hover{
+.login-mobile:hover, .login-desk:hover{
   border:3px solid var(--skillanim);
   background-color: var(--skillanim);
   transition:0.4s ease-in-out;
@@ -496,11 +496,14 @@ button{
   .nav-container ul li{
     display:none;
   }
-  .login{
+  .login-desk{
+    display:none;
+  }
+  .login-mobile{
 
   border:3px solid var(--skillanim);
   padding:7px;
-  width:12vw;
+  width:60vw;
   text-align: center;
   margin-right:20px;
 }
