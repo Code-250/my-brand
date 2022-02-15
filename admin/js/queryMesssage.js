@@ -1,24 +1,27 @@
 const loginCredentials = JSON.parse(localStorage.getItem("loginCredentials"));
 const token = loginCredentials.token;
 console.log(token);
+const newCredentials = localStorage.getItem("loginCredentials");
+const cred = JSON.parse(newCredentials);
+console.log(cred.role);
+if (cred.role !== "Admin") {
+  window.location.replace("../login.html");
+}
 
 const section = document.querySelector(".section-content");
-const queries = async () => {
-  const getQueries = await fetch(
-    "https://my-brand-server.herokuapp.com/api/v1/queries/all-messages",
-    {
-      method: "GET",
-      headers: {
-        "content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-    }
-  );
-  const data = await getQueries.json();
-  console.log(data);
-  const contacts = data.data;
-  contacts.forEach((message) => {
-    section.innerHTML += `<div class="message-card">
+// const contact = JSON.parse(contacts);
+fetch("https://my-brand-server.herokuapp.com/api/v1/queries/all-messages", {
+  method: "get",
+  headers: {
+    "content-Type": "application/json",
+    authorization: `Bearer ${cred.token}`,
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    data?.data.forEach((message) => {
+      section.innerHTML += `<div class="message-card">
               <div class="article-title-date">
                 <h3 class="title-articles">${message.guestName}</h3>
                 <p class="date-article">${message.email}</p>
@@ -36,6 +39,6 @@ const queries = async () => {
                 </div>
               </div>
             </div>`;
-  });
-};
-queries();
+    });
+  })
+  .catch((err) => console.log(err));
