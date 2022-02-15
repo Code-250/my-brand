@@ -1,12 +1,23 @@
 
+
+const navBar = document.querySelector(".profile-full");
+
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 let article = document.querySelector(".blog-article-content");
 console.log(id);
 const getArticle = JSON.parse(localStorage.getItem("blogList"));
-console.log(id);
+const getUser = JSON.parse(localStorage.getItem("loginCredentials"));
+console.log(getUser);
+if (getUser) {
+  navBar.innerHTML = `  <div class="profile">
+            <img src="./assets/rich-bw.jpg" alt="blog owner profile" class="profile-picture"> 
+          </div>
+          <div class="name-owner">
+            <h5 class="owner-name">${getUser.user.userName}</h5>
+          </div>`;
+}
 getArticle?.forEach((element) => {
-  console.log(id);
   if (id == element.id) {
     console.log(id, element.id);
     article.innerHTML = `<div class="blog-image">

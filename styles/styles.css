@@ -36,6 +36,7 @@
   padding:7px;
   width:6vw;
   text-align: center;
+  margin-right:20px;
 }
 .login-text{
   font-family: Raleway;
@@ -495,6 +496,14 @@ button{
   .nav-container ul li{
     display:none;
   }
+  .login{
+
+  border:3px solid var(--skillanim);
+  padding:7px;
+  width:12vw;
+  text-align: center;
+  margin-right:20px;
+}
   .nav-links-bars{
     width:100%;
     background-color: var(--navback);

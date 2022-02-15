@@ -271,11 +271,7 @@
     logoutBtn.addEventListener("click", (e) => {
       e.preventDefault();
       
-      const newCredentials = localStorage.getItem("loginCredentials")
-      const cred = JSON.parse(newCredentials)
-      cred.isLoggedIn = false;
-      const credentials = JSON.stringify(cred)
-      localStorage.setItem("loginCredentials", credentials);
+      localStorage.removeItem("loginCredentials")
       window.location.replace("../login.html");
     });
 

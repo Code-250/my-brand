@@ -1,11 +1,9 @@
 // populating data  in the dashboard
 
 const newCredentials = localStorage.getItem("loginCredentials");
-const cred = JSON.parse(newCredentials);
-if (cred.isLoggedIn === false) {
+if (!newCredentials) {
   window.location.replace("../login.html");
 }
-console.log(cred);
 const deleteBlo = document.querySelector("#my-delete-model");
 
 // delete article function
