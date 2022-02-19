@@ -50,6 +50,25 @@ function update(id) {
     };
     reader.readAsDataURL(imageUpdate.files[0]);
   });
+  fetch(`https://my-brand-server.herokuapp.com/api/v1/posts/${id}`, {
+    method: "get",
+    headers: {
+      "content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data, "=======");
+      const title = (document.querySelector(".title-update").value =
+        data.title);
+      const body = (document.querySelector(
+        ".detailed-update-description"
+      ).value = data.content);
+      const image = document
+        .querySelector("#image-preview-update")
+        .setAttribute("src", data.imageUrl);
+    })
+    .catch((err) => console.log(err));
   RetrievedObj.forEach((article) => {
     if (article.id == id) {
       const title = (document.querySelector(".title-update").value =
@@ -111,12 +130,21 @@ function update(id) {
 const getData = JSON.parse(localStorage.getItem("blogList"));
 console.log(getData);
 let blogCardElement = document.querySelector(".section-content");
-getData?.forEach((element) => {
-  let body = element?.description.slice(0, 120) + "....";
-
-  blogCardElement.innerHTML += `
-  <div class="article-card">
-              <a href="../article.html?id=${element.id}" data-id="${element.id}">
+fetch("https://my-brand-server.herokuapp.com/api/v1/posts", {
+  method: "get",
+  headers: {
+    "content-Type": "application/json",
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    data?.data?.forEach((element) => {
+      let body = element?.content?.slice(0, 120) + "....";
+      const id = element.id
+      blogCardElement.innerHTML += `
+            <div class="article-card">
+              <a href="../article.html?id=${element._id}" data-id="${element._id}">
               <div class="article-owner-image">
                 <img src="${element.imageUrl}" alt="importance of reading" width="400" height="350"/>
               </div>
@@ -131,11 +159,15 @@ getData?.forEach((element) => {
             </a>
                <div class="edit-delete">
                 <div class="edit-skill-article" id="edit-skill">
-                  <i onclick="update(${element.id})" class="fas fa-pen update"></i>
+                  <i onclick="update(${id})" class="fas fa-pen update"></i>
                 </div>
                 <div class="delete-blog">
-                  <i onclick="deleteArticle(${element.id})" class="fas fa-trash-alt delete"></i>
+                  <i onclick="deleteArticle(${element._id})" class="fas fa-trash-alt delete"></i>
                 </div>
               </div>
             </div>`;
-});
+    });
+  })
+  .catch((err) => console.log(err));
+
+// fetch();
