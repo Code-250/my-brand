@@ -1,6 +1,8 @@
 // populating data  in the dashboard
 
 const newCredentials = localStorage.getItem("loginCredentials");
+const loginData = JSON.parse(newCredentials);
+
 if (!newCredentials) {
   window.location.replace("../login.html");
 }
@@ -33,14 +35,12 @@ function update(id) {
     const reader = new FileReader();
     reader.onload = () => {
       const imageUrls = reader.result;
-      console.log(imageUrls);
       if (imageUrls === null) {
         return "image is required";
       } else {
         localStorage.setItem("recent-image", imageUrls);
         localStorage.setItem("save", imageUrls);
         const imagePreviewUpdate = localStorage.getItem("recent-image");
-        console.log(imagePreviewUpdate);
 
         document
           .querySelector("#image-preview-update")
@@ -50,26 +50,63 @@ function update(id) {
     };
     reader.readAsDataURL(imageUpdate.files[0]);
   });
+
   fetch(`https://my-brand-server.herokuapp.com/api/v1/posts/${id}`, {
     method: "get",
     headers: {
+      "Access-Control-Cross-origin": "*",
       "content-Type": "application/json",
     },
   })
     .then((res) => res.json())
     .then((data) => {
       console.log(data, "=======");
-      const title = (document.querySelector(".title-update").value =
-        data.title);
-      const body = (document.querySelector(
-        ".detailed-update-description"
-      ).value = data.content);
-      const image = document
-        .querySelector("#image-preview-update")
-        .setAttribute("src", data.imageUrl);
+      if (!newCredentials) {
+        console.log("you are not logged in please loggIn");
+      } else {
+        const title = (document.querySelector(".title-update").value =
+          data.data[0].title);
+        const content = (document.querySelector(
+          ".detailed-update-description"
+        ).value = data.data[0].content);
+        const image = document
+          .querySelector("#image-preview-update")
+          .setAttribute("src", data.data[0].imageUrl);
+        const filesUpdate = document.querySelector(".article-picture-update");
+
+        const updated = document.querySelector(".submit-update-btn");
+        updated.addEventListener("click", () => {
+          const title = document.querySelector(".title-update").value;
+          const content = document.querySelector(
+            ".detailed-update-description"
+          ).value;
+          const updateData = new FormData();
+          updateData.append("title", title);
+          updateData.append("content", content);
+          updateData.append("imageUrl", filesUpdate.files[0]);
+          const idUpdate = data.data[0]._id;
+          console.log(loginData.token);
+          console.log(idUpdate);
+          fetch(
+            `https://my-brand-server.herokuapp.com/api/v1/posts/${idUpdate}`,
+            {
+              method: "put",
+              headers: {
+                authorization: `Bearer ${loginData.token}`,
+              },
+              body: updateData,
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("log to the console the updated data", data);
+              window.location.reload();
+            });
+        });
+      }
     })
     .catch((err) => console.log(err));
-  RetrievedObj.forEach((article) => {
+  RetrievedObj?.forEach((article) => {
     if (article.id == id) {
       const title = (document.querySelector(".title-update").value =
         article.title);
@@ -133,6 +170,7 @@ let blogCardElement = document.querySelector(".section-content");
 fetch("https://my-brand-server.herokuapp.com/api/v1/posts", {
   method: "get",
   headers: {
+    "Access-Control-Cross-origin": "*",
     "content-Type": "application/json",
   },
 })
@@ -141,7 +179,8 @@ fetch("https://my-brand-server.herokuapp.com/api/v1/posts", {
     console.log(data);
     data?.data?.forEach((element) => {
       let body = element?.content?.slice(0, 120) + "....";
-      const id = element.id
+      const id = element._id;
+      console.log(id);
       blogCardElement.innerHTML += `
             <div class="article-card">
               <a href="../article.html?id=${element._id}" data-id="${element._id}">
@@ -159,7 +198,7 @@ fetch("https://my-brand-server.herokuapp.com/api/v1/posts", {
             </a>
                <div class="edit-delete">
                 <div class="edit-skill-article" id="edit-skill">
-                  <i onclick="update(${id})" class="fas fa-pen update"></i>
+                  <i onclick="update(id)" class="fas fa-pen update"></i>
                 </div>
                 <div class="delete-blog">
                   <i onclick="deleteArticle(${element._id})" class="fas fa-trash-alt delete"></i>

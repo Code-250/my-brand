@@ -1,8 +1,19 @@
 const commentData = document.querySelector("form");
 const SubmitComment = document.querySelector(".comment-btn");
-
+const urlParamss = new URLSearchParams(window.location.search);
+const ids = urlParamss.get("id");
 const getBlogsData = JSON.parse(localStorage.getItem("blogList"));
 console.log(getBlogsData);
+
+fetch(`https://my-brand-server.herokuapp.com/api/v1/posts/${ids}`, {
+  method: "get",
+  headers: {
+    "content-Type": "application/json",
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {})
+  .catch((err) => console.log(err));
 const Params = new URLSearchParams(window.location.search);
 const articleId = Params.get("id");
 getBlogsData?.forEach((element) => {
