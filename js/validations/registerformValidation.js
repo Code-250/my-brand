@@ -2,13 +2,22 @@
 const popCreate = document.querySelector(".popupCreate");
 
 const loginForm = document.querySelector("form");
-const handleLogin = (e) => {
+const handleRegister = (e) => {
   e.preventDefault();
   const formData = new FormData(loginForm).entries();
-  const { email, password } = Object.fromEntries(formData);
+  const { email, password, userName } = Object.fromEntries(formData);
   // console.log("keeeee");
   const emailErrorMessage = validateEmail(email);
   const passowrdErrorMessage = validatePassword(password, 6);
+  const UserNameErrorMessage = validateUserName(userName);
+
+  if (UserNameErrorMessage) {
+    const UserNameErrorMessageElement = document.querySelector(
+      ".userName.error-message"
+    );
+    // show email error message to user
+    UserNameErrorMessageElement.innerText = UserNameErrorMessage;
+  }
 
   if (emailErrorMessage) {
     // select the email form field message element
@@ -27,14 +36,19 @@ const handleLogin = (e) => {
     // show password error message to user
     passwordErrorMessageElement.innerText = passowrdErrorMessage;
   }
-  if ((emailErrorMessage === " ") & (passowrdErrorMessage === " ")) {
-    fetch("https://my-brand-server.herokuapp.com/api/v1/users/login", {
+  if (
+    (emailErrorMessage === " ") &
+    (passowrdErrorMessage === " ") &
+    (UserNameErrorMessage === " ")
+  ) {
+    fetch("https://my-brand-server.herokuapp.com/api/v1/users/register", {
       method: "POST",
       headers: {
         "content-Type": "application/json",
         "Access-Control-Cross-origin": "*",
       },
       body: JSON.stringify({
+        userName,
         email,
         password,
       }),
@@ -59,24 +73,7 @@ const handleLogin = (e) => {
             removeElement.remove();
             // window.location.reload();
           }, 3000);
-          const token = data.data.token;
-          console.log(token, data.data.foundEmail.role);
-          const loginCredentials = {
-            role: data.data.foundEmail.role,
-            token: token,
-            user: data.data.foundEmail,
-          };
-          const saveCredentials = JSON.stringify(loginCredentials);
-          // console.log(saveCredentials);
-          localStorage.setItem("loginCredentials", saveCredentials);
-
-          if (loginCredentials.role === null) {
-            window.location.replace("../login.html");
-          } else if (loginCredentials.role === "guest") {
-            window.location.replace("../../index.html");
-          } else {
-            window.location.replace("./admin/admin.html");
-          }
+          window.location.href("./login.html");
         }
       });
   }
@@ -90,7 +87,10 @@ const validateEmail = (email) => {
 
   return " ";
 };
-
+const validateUserName = (userName) => {
+  if (!userName?.trim()) return "userName is required";
+  return " ";
+};
 const validatePassword = (password, minLength) => {
   if (!password) return "Password is required";
   if (password.length < minLength) {
@@ -110,4 +110,4 @@ const validatePassword = (password, minLength) => {
 };
 
 const loginBtn = document.querySelector(".login-btn");
-loginBtn.addEventListener("click", handleLogin);
+loginBtn.addEventListener("click", handleRegister);

@@ -236,9 +236,8 @@
 }
 .comment-btn{
   position:absolute;
-  top:300px;
-  left:555px;
-  right:0;
+  top:320px;
+  right:110px;
   padding:10px;
   text-align:center;
   width:9vw;
@@ -373,6 +372,19 @@
   .comments-container{
     width:95%;
     padding:0px;
+  }
+  .comment-btn{
+    position:absolute;
+    top:320px;
+    right:70px;
+    padding:10px;
+    text-align:center;
+    width:30vw;
+    font-family: Raleway;
+    font-weight:600;
+    border-radius:10px ;
+    border: 3px solid var(--textColor);
+  
   }
   .comment-guest{
   width:95%;

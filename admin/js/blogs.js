@@ -1,9 +1,10 @@
 // populating data  in the dashboard
+const popCreate = document.querySelector(".popupCreate");
 
 const newCredentials = localStorage.getItem("loginCredentials");
 const loginData = JSON.parse(newCredentials);
 
-if (!newCredentials) {
+if (loginData?.role !== "Admin") {
   window.location.replace("../login.html");
 }
 const deleteBlo = document.querySelector("#my-delete-model");
@@ -60,7 +61,6 @@ function update(id) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data, "=======");
       if (!newCredentials) {
         console.log("you are not logged in please loggIn");
       } else {
@@ -177,6 +177,12 @@ fetch("https://my-brand-server.herokuapp.com/api/v1/posts", {
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
+    popCreate.innerHTML = `<div class="success"><p class="fade-out ">${data.message}</p></div>`;
+    setTimeout(() => {
+      const removeElement = document.querySelector(".success");
+      removeElement.remove();
+      // window.location.reload();
+    }, 3000);
     data?.data?.forEach((element) => {
       let body = element?.content?.slice(0, 120) + "....";
       const id = element._id;

@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/register.css">
   <title>login Page</title>
 </head>
 <body>
@@ -16,10 +16,14 @@
     <div class="content">
 
       <div class="input-field popupCreate"></div>
-      <h2 class="title">Welcome <span>ADMIN.</span></h2>
+      <h2 class="title">Welcome <span>Please Register</span></h2>
       <form action="#" class="login-content"> 
         <div class="input-group">
-          <input autofocus type='email' placeholder="Enter your email" name="email" class="input input-error" required id="email">
+          <input autofocus type='text' placeholder="userName" name="userName" class="input input-error" required id="userName">
+          <span class="userName error-message"></span>
+        </div>
+        <div class="input-group">
+          <input type='email' placeholder="Enter your email" name="email" class="input input-error" required id="email">
           <span class="email error-message"></span>
         </div>
         <div class="input-group">
@@ -28,16 +32,19 @@
         </div>
         
         <!-- <a href="./admin/admin.html"> -->
-          <div class="login-btn " type="submit">Login</div>
+          <div class="login-btn " type="submit">Register</div>
         <!-- </a> -->
-        <a href="./index.html" class="go-back">
-          <div class="back-to-home">Go back Home</div>
-        </a>
+        <div class="back-links">
+          <div class="back-to-home">Go back<a href="./index.html" class="go-back"> Home</a></div>
+        
+          <div class="back-to-login"><a href="./login.html" class="go-back">Sign in</a> instead</div>
+        </div>
+        
         
       </form>
       
     </div>
   </div>
-  <script src="./js/validations/loginformValidation.js"></script>
+  <script src="./js/validations/registerformValidation.js"></script>
 </body>
 </html>
