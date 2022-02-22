@@ -13,8 +13,9 @@ fetch(`https://my-brand-server.herokuapp.com/api/v1/posts/${id}`, {
 })
   .then((res) => res.json())
   .then((data) => {
+    if (data.status !== 200) return console.log("no datas here");
     article.innerHTML = `<div class="blog-image">
-          <img src="${data.data.imageUrl}" alt="dockeriziation working ahead" class="blog-picture">
+          <img src="${data?.data?.imageUrl}" alt="dockeriziation working ahead" class="blog-picture">
         </div>
         <div class="blogger-profile-date">
           <div class="blogger-image">
@@ -27,12 +28,12 @@ fetch(`https://my-brand-server.herokuapp.com/api/v1/posts/${id}`, {
         </div>
         <div class="blog-title-container">
           <h3 class="title-blog">
-            ${data.data.title}
+            ${data?.data?.title}
           </h3>
         </div>
         <div class="blog-full-content">
         <p class="blog-content-full">
-        ${data.data.content}
+        ${data?.data?.content}
         </p>
         
         </div>
@@ -67,7 +68,7 @@ const getAllComments = async () => {
   );
   const CommentsRetrieved = await res2.json();
   console.log(CommentsRetrieved);
-  const commentsList = CommentsRetrieved.data.comments;
+  const commentsList = CommentsRetrieved?.data?.comments;
   commentsList?.map((comment) => {
     assignData.innerHTML += `
     <div class="comment-guest">
