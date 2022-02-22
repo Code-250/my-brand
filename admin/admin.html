@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
   <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -95,7 +99,7 @@
               <span class="title-error error-message"></span>
             </div>
             <div class="upload-article-image">
-              <input type="file" name="file" class="article-picture" accept="image/x-jpeg,image/x-png">
+              <input type="file" name="imageUrl" class="article-picture">
 
             </div>
             <div class="preview-picture">
@@ -103,7 +107,7 @@
               <span class="preview-picture-alt">Image Preview</span>
             </div>
             <div class="article-content">
-              <textarea name="description" id="" cols="30" rows="10" placeholder="article description" class="detailed-article-description ckeditor"></textarea>
+              <textarea name="content" id="" cols="30" rows="10" placeholder="article description" class="detailed-article-description ckeditor"></textarea>
               <span class="detailed-description error-message"></span>
             </div>
             <div class="position-content">
@@ -133,7 +137,7 @@
               <span class="title-update-error error-message hidden">title is required</span>
             </div>
             <div class="upload-article-image">
-              <input type="file" class="article-picture-update" accept="image/x-jpeg,image/x-png">
+              <input type="file" name="imageUrl" class="article-picture-update"/>
 
             </div>
             <div class="preview-picture">
@@ -141,7 +145,7 @@
               <span class="preview-picture-alt">Image Preview</span>
             </div>
             <div class="article-content">
-              <textarea name="description" id="" cols="30" rows="10" placeholder="article description" class="detailed-update-description"></textarea>
+              <textarea name="content" id="" cols="30" rows="10" placeholder="article description" class="detailed-update-description"></textarea>
               <span class="detailed-update-description error-message hidden">Body is required</span>
             </div>
             <div class="position-content">
@@ -178,6 +182,8 @@
         <div class="section-title">
           <h1 class="title-article">Articles</h1>
         </div>
+        
+      <div class="input-field popupCreate"></div>
         <section class="section-content">
           
              
@@ -364,7 +370,7 @@
   <script src="./js/model.js"></script>
   <script src="./js/skillsModel.js"></script>
   <script src="./js/adminHambuger.js"></script>
-  <script src="js/blogs.js"></script>
+  <script src="./js/blogs.js"></script>
   <script>
     const logoutBtn = document.querySelector(".logout-btn");
     logoutBtn.addEventListener("click", (e) => {

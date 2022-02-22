@@ -1,7 +1,10 @@
 // populating data  in the dashboard
+const popCreate = document.querySelector(".popupCreate");
 
 const newCredentials = localStorage.getItem("loginCredentials");
-if (!newCredentials) {
+const loginData = JSON.parse(newCredentials);
+
+if (loginData?.role !== "Admin") {
   window.location.replace("../login.html");
 }
 const deleteBlo = document.querySelector("#my-delete-model");
@@ -33,14 +36,12 @@ function update(id) {
     const reader = new FileReader();
     reader.onload = () => {
       const imageUrls = reader.result;
-      console.log(imageUrls);
       if (imageUrls === null) {
         return "image is required";
       } else {
         localStorage.setItem("recent-image", imageUrls);
         localStorage.setItem("save", imageUrls);
         const imagePreviewUpdate = localStorage.getItem("recent-image");
-        console.log(imagePreviewUpdate);
 
         document
           .querySelector("#image-preview-update")
@@ -50,7 +51,62 @@ function update(id) {
     };
     reader.readAsDataURL(imageUpdate.files[0]);
   });
-  RetrievedObj.forEach((article) => {
+
+  fetch(`https://my-brand-server.herokuapp.com/api/v1/posts/${id}`, {
+    method: "get",
+    headers: {
+      "Access-Control-Cross-origin": "*",
+      "content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (!newCredentials) {
+        console.log("you are not logged in please loggIn");
+      } else {
+        const title = (document.querySelector(".title-update").value =
+          data.data[0].title);
+        const content = (document.querySelector(
+          ".detailed-update-description"
+        ).value = data.data[0].content);
+        const image = document
+          .querySelector("#image-preview-update")
+          .setAttribute("src", data.data[0].imageUrl);
+        const filesUpdate = document.querySelector(".article-picture-update");
+
+        const updated = document.querySelector(".submit-update-btn");
+        updated.addEventListener("click", () => {
+          const title = document.querySelector(".title-update").value;
+          const content = document.querySelector(
+            ".detailed-update-description"
+          ).value;
+          const updateData = new FormData();
+          updateData.append("title", title);
+          updateData.append("content", content);
+          updateData.append("imageUrl", filesUpdate.files[0]);
+          const idUpdate = data.data[0]._id;
+          console.log(loginData.token);
+          console.log(idUpdate);
+          fetch(
+            `https://my-brand-server.herokuapp.com/api/v1/posts/${idUpdate}`,
+            {
+              method: "put",
+              headers: {
+                authorization: `Bearer ${loginData.token}`,
+              },
+              body: updateData,
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("log to the console the updated data", data);
+              window.location.reload();
+            });
+        });
+      }
+    })
+    .catch((err) => console.log(err));
+  RetrievedObj?.forEach((article) => {
     if (article.id == id) {
       const title = (document.querySelector(".title-update").value =
         article.title);
@@ -111,12 +167,29 @@ function update(id) {
 const getData = JSON.parse(localStorage.getItem("blogList"));
 console.log(getData);
 let blogCardElement = document.querySelector(".section-content");
-getData?.forEach((element) => {
-  let body = element?.description.slice(0, 120) + "....";
-
-  blogCardElement.innerHTML += `
-  <div class="article-card">
-              <a href="../article.html?id=${element.id}" data-id="${element.id}">
+fetch("https://my-brand-server.herokuapp.com/api/v1/posts", {
+  method: "get",
+  headers: {
+    "Access-Control-Cross-origin": "*",
+    "content-Type": "application/json",
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    popCreate.innerHTML = `<div class="success"><p class="fade-out ">${data.message}</p></div>`;
+    setTimeout(() => {
+      const removeElement = document.querySelector(".success");
+      removeElement.remove();
+      // window.location.reload();
+    }, 3000);
+    data?.data?.forEach((element) => {
+      let body = element?.content?.slice(0, 120) + "....";
+      const id = element._id;
+      console.log(id);
+      blogCardElement.innerHTML += `
+            <div class="article-card">
+              <a href="../article.html?id=${element._id}" data-id="${element._id}">
               <div class="article-owner-image">
                 <img src="${element.imageUrl}" alt="importance of reading" width="400" height="350"/>
               </div>
@@ -131,11 +204,15 @@ getData?.forEach((element) => {
             </a>
                <div class="edit-delete">
                 <div class="edit-skill-article" id="edit-skill">
-                  <i onclick="update(${element.id})" class="fas fa-pen update"></i>
+                  <i onclick="update(id)" class="fas fa-pen update"></i>
                 </div>
                 <div class="delete-blog">
-                  <i onclick="deleteArticle(${element.id})" class="fas fa-trash-alt delete"></i>
+                  <i onclick="deleteArticle(${element._id})" class="fas fa-trash-alt delete"></i>
                 </div>
               </div>
             </div>`;
-});
+    });
+  })
+  .catch((err) => console.log(err));
+
+// fetch();

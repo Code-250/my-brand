@@ -37,6 +37,31 @@
 .contact-content{
   width:40%;
   text-align:center;
+  position: relative;
+}
+.popupCreate .success{
+  position:absolute;
+  top:0px;
+  left:800px;
+  background-color:green;
+  padding:20px;
+  width:200px;
+  height:40px;
+  display:flex;
+  z-index:2;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.fade-out{
+  color:white;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 15px;
+}
+.fadeout{
+  display:none;
 }
 .contact-title{
   position:relative;
@@ -318,5 +343,34 @@
   .github,.facebook,.linkedin,.instagram{
     margin:10px;
     font-size: 15px;
+  }
+  .contact-content{
+    width:40%;
+    text-align:center;
+    position: relative;
+  }
+  .popupCreate .success{
+    position:absolute;
+    top:0px;
+    left:200px;
+    background-color:green;
+    padding:20px;
+    width:200px;
+    height:40px;
+    display:flex;
+    z-index:2;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  
+  .fade-out{
+    color:white;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .fadeout{
+    display:none;
   }
 }

@@ -49,6 +49,18 @@
 .fadeout{
   display:none;
 }
+.back-links{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+}
+.back-to-home, .back-to-login{
+  color:white;
+  font-family: Raleway;
+  font-weight: 400;
+  font-size:15px;
+  padding-right:15px;
+}
 .content{
   background: rgba(196, 196, 196, 0.1);
   display:flex;
@@ -91,10 +103,18 @@
   background: #1E242C;
   border:none;
   border-radius:2px;
+  margin-top:35px;
+  color:#5A5A5A
+}
+#userName{
+  padding:10px;
+  width:22vw;
+  background: #1E242C;
+  border:none;
+  border-radius:2px;
   margin-top:60px;
   color:#5A5A5A
 }
-
 .input.input-error{
   border:1px solid red;
 }
@@ -132,6 +152,7 @@
   font-family: Raleway;
   font-weight:400;
   margin-top: -10px;
+  text-decoration: none;
 }
 .hidden{
   display:none;
@@ -168,6 +189,11 @@
     padding:5px;
   }
   #email{
+    width:80%;
+    margin-top:30px;
+    border-radius: 5px;
+  }
+  #userName{
     width:80%;
     margin-top:30px;
     border-radius: 5px;

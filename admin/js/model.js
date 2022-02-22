@@ -39,10 +39,10 @@ const handleCreateArticle = (e) => {
   e.preventDefault();
 
   const formData = new FormData(articleForm).entries();
-  const { title, description } = Object.fromEntries(formData);
+  const { title, content } = Object.fromEntries(formData);
 
   const titleErrorMessage = validateTitle(title);
-  const descriptionErrorMessage = validateDescription(description);
+  const descriptionErrorMessage = validateDescription(content);
 
   if (titleErrorMessage) {
     const titleErrorMessageElement = document.querySelector(
@@ -70,11 +70,31 @@ const handleCreateArticle = (e) => {
     descriptionErrorMessageElement.style.display = "none";
 
     const imageUrl = localStorage.getItem("save");
+    const loginCredentials = JSON.parse(
+      localStorage.getItem("loginCredentials")
+    );
+    console.log(loginCredentials);
+    const files = document.querySelector(".article-picture");
+    const dataFormatted = new FormData();
+    dataFormatted.append("title", title);
+    dataFormatted.append("content", content);
+    dataFormatted.append("imageUrl", files.files[0]);
+
+    fetch("https://my-brand-server.herokuapp.com/api/v1/posts", {
+      method: "post",
+      headers: {
+        authorization: `Bearer ${loginCredentials.token}`,
+      },
+      body: dataFormatted,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
     const blog = {
       id: Date.now(),
       imageUrl,
       title,
-      description,
+      content,
       like: 0,
       comments: [],
       numberOfComments: 0,
@@ -89,7 +109,7 @@ const handleCreateArticle = (e) => {
       localStorage.removeItem("save");
       document.querySelector("form").reset();
       model.style.display = "none";
-      window.location.reload();
+      // window.location.reload();
     } else {
       blogList.push(blog);
       console.log(blogList);
@@ -108,19 +128,17 @@ const handleCreateArticle = (e) => {
   }
 };
 
-
-
- const validateTitle = (title) => {
-   if (!title.trim()) return "Title of the article is required";
-   if (title.trim().length < 8) return "Title must be atleast 8 character long";
-   return " ";
- };
- const validateDescription = (description) => {
-   if (!description.trim()) return "decription of the article is required";
-   if (description.trim().length < 20)
-     return "article description must be atleast 20 character long";
-   return " ";
- };
+const validateTitle = (title) => {
+  if (!title.trim()) return "Title of the article is required";
+  if (title.trim().length < 8) return "Title must be atleast 8 character long";
+  return " ";
+};
+const validateDescription = (content) => {
+  if (!content.trim()) return "decription of the article is required";
+  if (content.trim().length < 6)
+    return "article description must be atleast 20 character long";
+  return " ";
+};
 
 
 
